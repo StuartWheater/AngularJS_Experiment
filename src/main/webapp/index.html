@@ -9,10 +9,15 @@
 
     <body ng-controller="agreementCtrl as agreement">
         <div class="container">
-            <h2>Agreement</h2>
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="#">Home</a></li>
+                <li role="presentation"><a href="#">Agreements</a></li>
+                <li role="presentation"><a href="#">Help</a></li>
+            </ul>
+
             <div class="list-group">
                 <div ng-repeat="feature in features" class="list-group-item">
-                    <h3 class="list-group-item-heading">{{feature.name}}</h3>
+                    <h3 class="list-group-item-heading">{{feature.name}} <span class="badge">{{feature.status}}</span></h3>
                     <p class="list-group-item-text">{{feature.text}}</p>
                 </div>
             </div>
