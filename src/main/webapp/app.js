@@ -1,4 +1,4 @@
-// var mainApp = angular.module('mainApp', ['agreementsModule', 'agreementModule', 'agreementtemplatesModule', 'agreementtemplateModule']);
+// var mainApp = angular.module('mainApp', ['ui.router', 'agreementsModule', 'agreementModule', 'agreementtemplatesModule', 'agreementtemplateModule']);
 
 var mainApp = angular.module('mainApp', []);
 
