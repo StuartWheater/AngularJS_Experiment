@@ -1,6 +1,6 @@
-angular.module('agreementyemplates', []);
+angular.module('agreementtemplatesModule', []);
 
-angular.module('agreementtemplates').controller('agreementtemplatesCtrl', ['$scope', function ($scope)
+angular.module('agreementtemplatesModule').controller('agreementtemplatesCtrl', ['$scope', function ($scope)
 {
     $scope.features = [ {"name": "Name", "text": "Text", "status": "active"} ];
 }]);

@@ -1,4 +1,4 @@
-var mainApp = angular.module('mainApp', ['agreements', 'agreement', 'agreementtemplates', 'agreementtemplate']);
+var mainApp = angular.module('mainApp', ['agreementsModule', 'agreementModule', 'agreementtemplatesModule', 'agreementtemplateModule']);
 
 angular.module('mainApp').controller('mainCtrl', ['$scope', function ($scope)
 {
