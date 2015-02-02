@@ -18,7 +18,7 @@
                 <a href="#" ng-click="decreaseCurrentPage()"><span>&laquo;</span></a>
             </li>
 
-            <li ng-repeat="{pageNumber in pageNumbers}" class="{active: isCurrentPage($index)}"><a href="#" ng-click="setCurrentPage($index)">$index</a></li>
+            <li ng-repeat="pageNumber in pageNumbers" class="{active: isCurrentPage($index)}"><a href="#" ng-click="setCurrentPage($index)">$index</a></li>
 
             <li ng-class="{'disabled': haveNextPage()}">
                 <a href="#" ng-click="increaseCurrentPage()"><span>&raquo;</span></a>
