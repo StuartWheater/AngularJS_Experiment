@@ -1,6 +1,4 @@
-// var mainApp = angular.module('mainApp', ['ui.router', 'agreementsModule', 'agreementModule', 'agreementtemplatesModule', 'agreementtemplateModule']);
-
-var mainApp = angular.module('mainApp', []);
+var mainApp = angular.module('mainApp', ['ui.router', 'agreementsModule', 'agreementModule', 'agreementtemplatesModule', 'agreementtemplateModule']);
 
 angular.module('mainApp').controller('mainCtrl', ['$scope', function ($scope)
 {
