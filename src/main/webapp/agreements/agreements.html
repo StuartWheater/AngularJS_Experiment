@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <nav ng-show="needsPagination">
+    <nav ng-show="needsPagination()">
         <ul class="pagination">
             <li ng-class="{'disabled': havePreviousPage()}">
                 <a href="#" ng-click="decreaseCurrentPage()"><span>&laquo;</span></a>
