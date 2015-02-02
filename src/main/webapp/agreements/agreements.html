@@ -1,14 +1,14 @@
-<div ng-controller="agreementsCtrl as agreements">
+<div ng-controller="agreementsCtrl">
     <h2>Agreements</h3>
 
     <div class="list-group">
-        <div ng-repeat="feature in features" class="list-group-item">
+        <div ng-repeat="agreement in agreements" class="list-group-item">
            <h3 class="list-group-item-heading">
-               {{feature.name}}
-               <span class="badge">{{feature.status}}</span>
-               <a class="btn btn-primary pull-right" ui-sref="agreement">Examine</a>
+               {{agreement.name}}
+               <span class="badge">{{agreement.status}}</span>
+               <a class="btn-sm btn-info pull-right" ui-sref="agreement">Examine</a>
            </h3>
-           <p class="list-group-item-text">{{feature.text}}</p>
+           <p class="list-group-item-text">{{agreement.text}}</p>
         </div>
     </div>
 
@@ -18,7 +18,7 @@
                 <a href="#" ng-click="decreaseCurrentPage()"><span>&laquo;</span></a>
             </li>
 
-            <li ng-repeat="{}" class="{active: isCurrentPage($index)}"><a href="#" ng-click="setCurrentPage($index)">$index</a></li>
+            <li ng-repeat="{pageNumber in pageNumbers}" class="{active: isCurrentPage($index)}"><a href="#" ng-click="setCurrentPage($index)">$index</a></li>
 
             <li ng-class="{'disabled': haveNextPage()}>
                 <a href="#" ng-click="increaseCurrentPage()"><span>&raquo;</span></a>

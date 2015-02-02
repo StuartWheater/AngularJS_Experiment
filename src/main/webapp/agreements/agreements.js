@@ -4,6 +4,7 @@ angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', funct
 {
     $scope.currentPage = 1;
     $scope.pageSize    = 10;
+    $scope.pageNumbers = [1, 2, 3];
 
     $scope.agreements =
     [
@@ -33,32 +34,32 @@ angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', funct
        {"name": "Name 24", "text": "Text Text Text Text 24", "status": "active"}
     ];
 
-    this.setCurrentPage = function(currentPage)
+    $scope.setCurrentPage = function(currentPage)
     {
         $scope.currentPage = currentPage;
     };
 
-    this.decreaseCurrentPage = function()
+    $scope.decreaseCurrentPage = function()
     {
         $scope.currentPage--;
     };
 
-    this.isCurrentPage = function(currentPage)
+    $scope.isCurrentPage = function(currentPage)
     {
         return $scope.currentPage == currentPage;
     };
 
-    this.havePreviousPage = function()
+    $scope.havePreviousPage = function()
     {
         return $scope.currentPage > 1;
     };
 
-    this.haveNextPage = function()
+    $scope.haveNextPage = function()
     {
         return $scope.currentPage < this.numberOfPages();
     };
 
-    this.numberOfPages = function()
+    $scope.numberOfPages = function()
     {
         if (($scope.agreements.length % $scope.pageSize) == 0)
             return $scope.agreements.length / $scope.pageSize;
