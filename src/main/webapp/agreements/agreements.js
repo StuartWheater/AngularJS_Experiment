@@ -35,21 +35,34 @@ angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', funct
 
     this.setCurrentPage = function(currentPage)
     {
-    	$scope.currentPage = currentPage;
-    };
-
-    this.isCurrentPage = function(currentPage)
-    {
-    	return $scope.currentPage == currentPage;
+        $scope.currentPage = currentPage;
     };
 
     this.decreaseCurrentPage = function()
     {
-    	$scope.currentPage--;
+        $scope.currentPage--;
     };
 
-    this.increaseCurrentPage = function()
+    this.isCurrentPage = function(currentPage)
     {
-    	$scope.currentPage++;
+        return $scope.currentPage == currentPage;
+    };
+
+    this.havePreviousPage = function()
+    {
+        return $scope.currentPage > 1;
+    };
+
+    this.haveNextPage = function()
+    {
+        return $scope.currentPage < this.numberOfPages();
+    };
+
+    this.numberOfPages = function()
+    {
+        if (($scope.agreements.length % $scope.pageSize) == 0)
+            return $scope.agreements.length / $scope.pageSize;
+        else
+            return ($scope.agreements.length / $scope.pageSize) + 1;
     };
 }]);
