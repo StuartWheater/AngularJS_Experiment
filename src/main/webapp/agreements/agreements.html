@@ -3,28 +3,25 @@
 
     <div class="list-group">
         <div ng-repeat="feature in features" class="list-group-item">
-           <h3 class="list-group-item-heading">{{feature.name}} <span class="badge">{{feature.status}}</span></h3>
-	   <a class="btn btn-primary pull-right" ui-sref="agreement">Edit</a>
+           <h3 class="list-group-item-heading">
+               {{feature.name}}
+               <span class="badge">{{feature.status}}
+               <a class="btn btn-primary pull-right" ui-sref="agreement">Examine</a>
+           </span></h3>
            <p class="list-group-item-text">{{feature.text}}</p>
-	</div>
+        </div>
     </div>
 
-    <nav>
+    <nav ng-show="needsPagination">
         <ul class="pagination">
-            <li class="disabled">
-                <span>
-                    <span aria-hidden="true">&laquo;</span>
-                </span>
+            <li ng-class="{'disabled': havePrevious}">
+                <a href="#" ng-click="decreaseCurrentPage()"><span>&laquo;</span></a>
             </li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-                <a href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
+
+            <li ng-repeat="{}" class="{active: isCurrentPage($index)}"><a href="#" ng-click="setCurrentPage($index)">$index</a></li>
+
+            <li ng-class="{'disabled': haveNext}>
+                <a href="#" ng-click="increaseCurrentPage()"><span>&raquo;</span></a>
             </li>
         </ul>
     </nav>
