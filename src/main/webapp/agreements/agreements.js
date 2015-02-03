@@ -66,7 +66,7 @@ angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', funct
 
     $scope.numberOfPages = function()
     {
-        retrun Math.ceil($scope.agreements.length / $scope.pageSize);
+        return Math.ceil($scope.agreements.length / $scope.pageSize);
     };
 }]);
 
