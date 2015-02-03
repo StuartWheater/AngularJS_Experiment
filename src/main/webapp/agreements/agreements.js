@@ -51,7 +51,7 @@ angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', funct
 
     $scope.needsPagination = function()
     {
-        return $scope.agreements.length > $scope.pageSize;
+        return $scope.numberOfPages() > 0;
     };
 
     $scope.havePreviousPage = function()
@@ -61,14 +61,19 @@ angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', funct
 
     $scope.haveNextPage = function()
     {
-        return $scope.currentPage < this.numberOfPages();
+        return $scope.currentPage < $scope.numberOfPages();
     };
 
     $scope.numberOfPages = function()
     {
-        if (($scope.agreements.length % $scope.pageSize) == 0)
-            return $scope.agreements.length / $scope.pageSize;
-        else
-            return ($scope.agreements.length / $scope.pageSize) + 1;
+        retrun Math.ceil($scope.agreements.length / $scope.pageSize);
     };
+}]);
+
+angular.module('agreementsModule').filter('onpage', ['$scope', function ($scope)
+{
+    return function (input)
+    {
+        return $scope.agreements.slice($scope.currentPage * $scope.pageSize, ($scope.currentPage + 1) * $scope.pageSize);
+    }
 }]);
