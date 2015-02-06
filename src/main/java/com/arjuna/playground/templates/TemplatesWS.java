@@ -70,26 +70,30 @@ public class TemplatesWS
     {
         List<TemplateDescriptionDTO> templateDescriptions = new LinkedList<>();
 
+        String requestURL = _request.getRequestURL().toString();
+        if (requestURL.endsWith("/"))
+        	requestURL = requestURL + "/";
+
         TemplateDescriptionDTO templateDescription01 = new TemplateDescriptionDTO();
-        templateDescription01.setURL(_request.getRequestURL().append("/3f7e5ba2-1e03-4641-b477-36d3ecb18de8").toString());
+        templateDescription01.setURL(requestURL + "3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
         templateDescription01.setName("XML Real-time internal agreement");
         templateDescription01.setPurpose("Create an agreement with an internal party to supply real-time XML data.");
         templateDescriptions.add(templateDescription01);
 
         TemplateDescriptionDTO templateDescription02 = new TemplateDescriptionDTO();
-        templateDescription02.setURL(_request.getRequestURL().append("/6e5747ef-41da-4344-a15e-e386695605f4").toString());
+        templateDescription02.setURL(requestURL + "6e5747ef-41da-4344-a15e-e386695605f4");
         templateDescription02.setName("JSON Real-time external agreement");
         templateDescription02.setPurpose("Create an agreement with an external party to supply real-time JSON data.");
         templateDescriptions.add(templateDescription02);
 
         TemplateDescriptionDTO templateDescription03 = new TemplateDescriptionDTO();
-        templateDescription03.setURL(_request.getRequestURL().append("/8693f1cd-8a77-4bca-87b0-46b3568657d4").toString());
+        templateDescription03.setURL(requestURL + "8693f1cd-8a77-4bca-87b0-46b3568657d4");
         templateDescription03.setName("XML Real-time internal agreement");
         templateDescription03.setPurpose("Create an agreement with an internal party to supply real-time XML data.");
         templateDescriptions.add(templateDescription03);
 
         TemplateDescriptionDTO templateDescription04 = new TemplateDescriptionDTO();
-        templateDescription04.setURL(_request.getRequestURL().append("/15bdb060-e2f3-4665-a231-fc325fb23e2b").toString());
+        templateDescription04.setURL(requestURL + "15bdb060-e2f3-4665-a231-fc325fb23e2b");
         templateDescription04.setName("JSON Real-time external agreement");
         templateDescription04.setPurpose("Create an agreement with an external party to supply real-time JSON data.");
         templateDescriptions.add(templateDescription04);
