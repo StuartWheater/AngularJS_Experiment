@@ -35,7 +35,7 @@ public class TemplatesWS
         {
             List<TemplateDescriptionDTO> templateDescriptions = createTemplateDescriptions();
 
-        	return templateDescriptions;
+            return templateDescriptions;
         }
         catch (Throwable throwable)
         {
@@ -55,7 +55,7 @@ public class TemplatesWS
         {
             Map<String, List<TemplateFieldDescriptionDTO>> templateFieldDescriptionsMap = createTemplateFieldDescriptionsMap();
 
-        	return templateFieldDescriptionsMap.get(id);
+            return templateFieldDescriptionsMap.get(id);
         }
         catch (Throwable throwable)
         {
@@ -67,36 +67,39 @@ public class TemplatesWS
 
     private List<TemplateDescriptionDTO> createTemplateDescriptions()
     {
-    	List<TemplateDescriptionDTO> templateDescriptions = new LinkedList<>();
+        List<TemplateDescriptionDTO> templateDescriptions = new LinkedList<>();
 
-    	TemplateDescriptionDTO templateDescription01 = new TemplateDescriptionDTO();
-    	templateDescription01.setId("3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
-    	templateDescription01.setName("XML Real-time internal agreement");
-    	templateDescription01.setPurpose("Create an agreement with an internal party for ");
-    	templateDescriptions.add(templateDescription01);
+        TemplateDescriptionDTO templateDescription01 = new TemplateDescriptionDTO();
+        templateDescription01.setId("3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
+        templateDescription01.setName("XML Real-time internal agreement");
+        templateDescription01.setPurpose("Create an agreement with an internal party to supply real-time XML data.");
+        templateDescriptions.add(templateDescription01);
 
-    	TemplateDescriptionDTO templateDescription02 = new TemplateDescriptionDTO();
-    	templateDescription02.setId("6e5747ef-41da-4344-a15e-e386695605f4");
-    	templateDescription01.setName("JSON Real-time external agreement");
-    	templateDescriptions.add(templateDescription02);
+        TemplateDescriptionDTO templateDescription02 = new TemplateDescriptionDTO();
+        templateDescription02.setId("6e5747ef-41da-4344-a15e-e386695605f4");
+        templateDescription02.setName("JSON Real-time external agreement");
+        templateDescription02.setPurpose("Create an agreement with an external party to supply real-time JSON data.");
+        templateDescriptions.add(templateDescription02);
 
-    	TemplateDescriptionDTO templateDescription03 = new TemplateDescriptionDTO();
-    	templateDescription03.setId("8693f1cd-8a77-4bca-87b0-46b3568657d4");
-    	templateDescription01.setName("XML Real-time internal agreement");
-    	templateDescriptions.add(templateDescription03);
+        TemplateDescriptionDTO templateDescription03 = new TemplateDescriptionDTO();
+        templateDescription03.setId("8693f1cd-8a77-4bca-87b0-46b3568657d4");
+        templateDescription03.setName("XML Real-time internal agreement");
+        templateDescription03.setPurpose("Create an agreement with an internal party to supply real-time XML data.");
+        templateDescriptions.add(templateDescription03);
 
-    	TemplateDescriptionDTO templateDescription04 = new TemplateDescriptionDTO();
-    	templateDescription04.setId("15bdb060-e2f3-4665-a231-fc325fb23e2b");
-    	templateDescription01.setName("JSON Real-time external agreement");
-    	templateDescriptions.add(templateDescription04);
+        TemplateDescriptionDTO templateDescription04 = new TemplateDescriptionDTO();
+        templateDescription04.setId("15bdb060-e2f3-4665-a231-fc325fb23e2b");
+        templateDescription04.setName("JSON Real-time external agreement");
+        templateDescription04.setPurpose("Create an agreement with an external party to supply real-time JSON data.");
+        templateDescriptions.add(templateDescription04);
 
-    	return templateDescriptions;
+        return templateDescriptions;
     }
 
     private Map<String, List<TemplateFieldDescriptionDTO>> createTemplateFieldDescriptionsMap()
     {
-    	Map<String, List<TemplateFieldDescriptionDTO>> templateFieldDescriptionMap = new HashMap<>();
+        Map<String, List<TemplateFieldDescriptionDTO>> templateFieldDescriptionMap = new HashMap<>();
 
-    	return templateFieldDescriptionMap;
+        return templateFieldDescriptionMap;
     }
 }
