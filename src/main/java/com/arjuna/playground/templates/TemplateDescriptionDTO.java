@@ -14,21 +14,21 @@ public class TemplateDescriptionDTO implements Serializable
     {
     }
 
-    public TemplateDescriptionDTO(String id, String name, String purpose)
+    public TemplateDescriptionDTO(String url, String name, String purpose)
     {
-        _id      = id;
+        _url     = url;
         _name    = name;
         _purpose = purpose;
     }
 
-    public String getId()
+    public String getURL()
     {
-        return _id;
+        return _url;
     }
 
-    public void setId(String id)
+    public void setURL(String url)
     {
-        _id = id;
+    	_url = url;
     }
 
     public String getName()
@@ -51,7 +51,7 @@ public class TemplateDescriptionDTO implements Serializable
         _purpose = purpose;
     }
 
-    private String _id;
+    private String _url;
     private String _name;
     private String _purpose;
 }

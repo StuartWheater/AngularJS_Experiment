@@ -4,6 +4,8 @@
 
 package com.arjuna.playground.templates;
 
+import java.net.URI;
+import java.net.URL;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -13,10 +15,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.ejb.Stateless;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
 @Path("/")
@@ -69,26 +74,28 @@ public class TemplatesWS
     {
         List<TemplateDescriptionDTO> templateDescriptions = new LinkedList<>();
 
+        URI requestURI = URI.create(_request.getRequestURI());
+
         TemplateDescriptionDTO templateDescription01 = new TemplateDescriptionDTO();
-        templateDescription01.setId("3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
+        templateDescription01.setURL(requestURI.resolve("3f7e5ba2-1e03-4641-b477-36d3ecb18de8").toString());
         templateDescription01.setName("XML Real-time internal agreement");
         templateDescription01.setPurpose("Create an agreement with an internal party to supply real-time XML data.");
         templateDescriptions.add(templateDescription01);
 
         TemplateDescriptionDTO templateDescription02 = new TemplateDescriptionDTO();
-        templateDescription02.setId("6e5747ef-41da-4344-a15e-e386695605f4");
+        templateDescription02.setURL(requestURI.resolve("6e5747ef-41da-4344-a15e-e386695605f4").toString());
         templateDescription02.setName("JSON Real-time external agreement");
         templateDescription02.setPurpose("Create an agreement with an external party to supply real-time JSON data.");
         templateDescriptions.add(templateDescription02);
 
         TemplateDescriptionDTO templateDescription03 = new TemplateDescriptionDTO();
-        templateDescription03.setId("8693f1cd-8a77-4bca-87b0-46b3568657d4");
+        templateDescription03.setURL(requestURI.resolve("8693f1cd-8a77-4bca-87b0-46b3568657d4").toString());
         templateDescription03.setName("XML Real-time internal agreement");
         templateDescription03.setPurpose("Create an agreement with an internal party to supply real-time XML data.");
         templateDescriptions.add(templateDescription03);
 
         TemplateDescriptionDTO templateDescription04 = new TemplateDescriptionDTO();
-        templateDescription04.setId("15bdb060-e2f3-4665-a231-fc325fb23e2b");
+        templateDescription04.setURL(requestURI.resolve("15bdb060-e2f3-4665-a231-fc325fb23e2b").toString());
         templateDescription04.setName("JSON Real-time external agreement");
         templateDescription04.setPurpose("Create an agreement with an external party to supply real-time JSON data.");
         templateDescriptions.add(templateDescription04);
@@ -102,4 +109,7 @@ public class TemplatesWS
 
         return templateFieldDescriptionMap;
     }
+    
+    @Context
+    private HttpServletRequest _request;
 }
