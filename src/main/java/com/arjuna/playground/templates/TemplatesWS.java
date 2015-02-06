@@ -26,7 +26,7 @@ public class TemplatesWS
     private static final Logger logger = Logger.getLogger(TemplatesWS.class.getName());
 
     @GET
-    @Path("/")
+    @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public List<TemplateFieldDescriptionDTO> getTemplateFieldDescriptions(@PathParam("id") String id)
     {
