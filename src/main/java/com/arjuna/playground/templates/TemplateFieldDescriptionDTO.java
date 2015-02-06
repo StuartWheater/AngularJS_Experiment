@@ -1,34 +1,29 @@
 /*
- * Copyright (c) 2013-2015, Arjuna Technologies Limited, Newcastle-upon-Tyne, England. All rights reserved.
+ * Copyright (c) 2015, Arjuna Technologies Limited, Newcastle-upon-Tyne, England. All rights reserved.
  */
 
 package com.arjuna.playground.templates;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class TemplateFieldDescriptionDTO implements Serializable
 {
-	private static final long serialVersionUID = -8748474429953548487L;
+	private static final long serialVersionUID = -3713818357435962472L;
 
 	public TemplateFieldDescriptionDTO()
     {
     }
 
-    public TemplateFieldDescriptionDTO(String id, String name, String purpose)
+    public TemplateFieldDescriptionDTO(String name, String type, String label, String purpose, List<TemplateFieldValidationDTO> validations, List<TemplateFieldOptionValueDTO> optionvalues, Boolean required)
     {
-        _id      = id;
-        _name    = name;
-        _purpose = purpose;
-    }
-
-    public String getId()
-    {
-        return _id;
-    }
-
-    public void setId(String id)
-    {
-        _id = id;
+        _name         = name;
+        _type         = type;
+        _label        = label;
+        _purpose      = purpose;
+        _validations  = validations;
+        _optionvalues = optionvalues;
+        _required     = required;
     }
 
     public String getName()
@@ -41,6 +36,26 @@ public class TemplateFieldDescriptionDTO implements Serializable
     	_name = name;
     }
 
+    public String getType()
+    {
+        return _type;
+    }
+
+    public void setType(String type)
+    {
+        _type = type;
+    }
+
+    public String getLabel()
+    {
+        return _label;
+    }
+
+    public void setLabel(String label)
+    {
+        _label = label;
+    }
+
     public String getPurpose()
     {
         return _purpose;
@@ -51,7 +66,41 @@ public class TemplateFieldDescriptionDTO implements Serializable
         _purpose = purpose;
     }
 
-    private String _id;
-    private String _name;
-    private String _purpose;
+    public List<TemplateFieldValidationDTO> getValidations()
+    {
+        return _validations;
+    }
+
+    public void setValidations(List<TemplateFieldValidationDTO> validations)
+    {
+    	_validations = validations;
+    }
+
+    public List<TemplateFieldOptionValueDTO> getOptionvalues()
+    {
+        return _optionvalues;
+    }
+
+    public void setOptionvalues(List<TemplateFieldOptionValueDTO> optionvalues)
+    {
+    	_optionvalues = optionvalues;
+    }
+
+    public Boolean getRequired()
+    {
+        return _required;
+    }
+
+    public void setRequired(Boolean required)
+    {
+    	_required = required;
+    }
+
+    private String                            _name;
+    private String                            _type;
+    private String                            _label;
+    private String                            _purpose;
+    private List<TemplateFieldValidationDTO>  _validations;
+    private List<TemplateFieldOptionValueDTO> _optionvalues;
+    private Boolean                           _required;
 }

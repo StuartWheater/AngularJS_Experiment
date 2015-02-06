@@ -5,10 +5,13 @@
 package com.arjuna.playground.templates;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.ejb.Stateless;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -30,7 +33,7 @@ public class TemplatesWS
         logger.log(Level.FINE, "TemplatesWS.getTemplateDescriptions");
         try
         {
-        	List<TemplateDescriptionDTO> templateDescriptions = new LinkedList<TemplateDescriptionDTO>();
+            List<TemplateDescriptionDTO> templateDescriptions = createTemplateDescriptions();
 
         	return templateDescriptions;
         }
@@ -50,9 +53,9 @@ public class TemplatesWS
         logger.log(Level.FINE, "TemplatesWS.getTemplateFieldDescriptions: [" + id + "]");
         try
         {
-        	List<TemplateFieldDescriptionDTO> templateFieldDescriptions = new LinkedList<TemplateFieldDescriptionDTO>();
+            Map<String, List<TemplateFieldDescriptionDTO>> templateFieldDescriptionsMap = createTemplateFieldDescriptionsMap();
 
-        	return templateFieldDescriptions;
+        	return templateFieldDescriptionsMap.get(id);
         }
         catch (Throwable throwable)
         {
@@ -60,5 +63,40 @@ public class TemplatesWS
 
             return Collections.emptyList();
         }
+    }
+
+    private List<TemplateDescriptionDTO> createTemplateDescriptions()
+    {
+    	List<TemplateDescriptionDTO> templateDescriptions = new LinkedList<>();
+
+    	TemplateDescriptionDTO templateDescription01 = new TemplateDescriptionDTO();
+    	templateDescription01.setId("3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
+    	templateDescription01.setName("XML Real-time internal agreement");
+    	templateDescription01.setPurpose("Create an agreement with an internal party for ");
+    	templateDescriptions.add(templateDescription01);
+
+    	TemplateDescriptionDTO templateDescription02 = new TemplateDescriptionDTO();
+    	templateDescription02.setId("6e5747ef-41da-4344-a15e-e386695605f4");
+    	templateDescription01.setName("JSON Real-time external agreement");
+    	templateDescriptions.add(templateDescription02);
+
+    	TemplateDescriptionDTO templateDescription03 = new TemplateDescriptionDTO();
+    	templateDescription03.setId("8693f1cd-8a77-4bca-87b0-46b3568657d4");
+    	templateDescription01.setName("XML Real-time internal agreement");
+    	templateDescriptions.add(templateDescription03);
+
+    	TemplateDescriptionDTO templateDescription04 = new TemplateDescriptionDTO();
+    	templateDescription04.setId("15bdb060-e2f3-4665-a231-fc325fb23e2b");
+    	templateDescription01.setName("JSON Real-time external agreement");
+    	templateDescriptions.add(templateDescription04);
+
+    	return templateDescriptions;
+    }
+
+    private Map<String, List<TemplateFieldDescriptionDTO>> createTemplateFieldDescriptionsMap()
+    {
+    	Map<String, List<TemplateFieldDescriptionDTO>> templateFieldDescriptionMap = new HashMap<>();
+
+    	return templateFieldDescriptionMap;
     }
 }
