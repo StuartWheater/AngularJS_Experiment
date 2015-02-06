@@ -71,7 +71,7 @@ public class TemplatesWS
         List<TemplateDescriptionDTO> templateDescriptions = new LinkedList<>();
 
         String requestURL = _request.getRequestURL().toString();
-        if (requestURL.endsWith("/"))
+        if (! requestURL.endsWith("/"))
         	requestURL = requestURL + "/";
 
         TemplateDescriptionDTO templateDescription01 = new TemplateDescriptionDTO();
