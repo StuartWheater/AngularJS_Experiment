@@ -7,7 +7,7 @@ package com.arjuna.playground.templates;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-@ApplicationPath("/templates")
+@ApplicationPath("/ws/templates")
 public class TemplatesApplication extends Application
 {
 }

@@ -7,7 +7,7 @@ package com.arjuna.playground.agreements;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-@ApplicationPath("/agreements")
+@ApplicationPath("/ws/agreements")
 public class AgreementsApplication extends Application
 {
 }
