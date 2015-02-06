@@ -28,26 +28,6 @@ public class TemplatesWS
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<TemplateDescriptionDTO> getTemplateDescriptions()
-    {
-        logger.log(Level.FINE, "TemplatesWS.getTemplateDescriptions");
-        try
-        {
-            List<TemplateDescriptionDTO> templateDescriptions = createTemplateDescriptions();
-
-            return templateDescriptions;
-        }
-        catch (Throwable throwable)
-        {
-            logger.log(Level.WARNING, "getTemplateDescriptions: Unable get template descriptions", throwable);
-
-            return Collections.emptyList();
-        }
-    }
-
-    @GET
-    @Path("/")
-    @Produces(MediaType.APPLICATION_JSON)
     public List<TemplateFieldDescriptionDTO> getTemplateFieldDescriptions(@PathParam("id") String id)
     {
         logger.log(Level.FINE, "TemplatesWS.getTemplateFieldDescriptions: [" + id + "]");
@@ -60,6 +40,26 @@ public class TemplatesWS
         catch (Throwable throwable)
         {
             logger.log(Level.WARNING, "getTemplateFieldDescriptions: Unable get template field descriptions", throwable);
+
+            return Collections.emptyList();
+        }
+    }
+
+    @GET
+    @Path("/")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<TemplateDescriptionDTO> getTemplateDescriptions()
+    {
+        logger.log(Level.FINE, "TemplatesWS.getTemplateDescriptions");
+        try
+        {
+            List<TemplateDescriptionDTO> templateDescriptions = createTemplateDescriptions();
+
+            return templateDescriptions;
+        }
+        catch (Throwable throwable)
+        {
+            logger.log(Level.WARNING, "getTemplateDescriptions: Unable get template descriptions", throwable);
 
             return Collections.emptyList();
         }
