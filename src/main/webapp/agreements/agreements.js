@@ -8,7 +8,7 @@ angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$log
 
     $scope.agreements = [ ];
 
-    this.reload = function ()
+    $scope.reload = function ()
     {
         $log.debug('reload');
         alert('reload');
