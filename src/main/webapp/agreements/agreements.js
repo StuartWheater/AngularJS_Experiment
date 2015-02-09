@@ -1,6 +1,6 @@
 angular.module('agreementsModule', []);
 
-angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', function ($scope)
+angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$log', function ($scope, $log)
 {
     $scope.currentPage = 1;
     $scope.pageSize    = 6;
@@ -10,6 +10,7 @@ angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', funct
 
     this.reload = function ()
     {
+        $log.debug('reload');
         alert('reload');
     };
     
@@ -57,7 +58,7 @@ angular.module('agreementsModule').filter('onpage', ['$scope', function ($scope)
     }
 }]);
 
-angular.module('agreementsModule').service('loader', ['$scope', '$http', function ($scope, $http)
+angular.module('agreementsModule').service('loader', ['$scope', '$http', '$log', function ($scope, $http, $log)
 {
     this.load = function ()
     {
@@ -65,12 +66,14 @@ angular.module('agreementsModule').service('loader', ['$scope', '$http', functio
             success(function (data, status, headers, config)
             {
                 $scope.agreements = data;
-                alert('success');
+                $log.debug('http - success');
+                alert('http - success');
             }).
             error(function (data, status, headers, config)
             {
                 $scope.agreements = [ ];
-                alert('error');
+                $log.debug('http - error');
+                alert('http - error');
             });
     };
 }]);
