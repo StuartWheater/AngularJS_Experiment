@@ -12,7 +12,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -43,9 +46,27 @@ public class AgreementsWS
         }
         catch (Throwable throwable)
         {
-            logger.log(Level.WARNING, "AgreementsWS.getAgreementSummaries: Unable get agreement summaries", throwable);
+            logger.log(Level.WARNING, "AgreementsWS.getAgreementSummaries: Unable to get agreement summaries", throwable);
 
-            throw new WebApplicationException("", Response.Status.INTERNAL_SERVER_ERROR);
+            throw new WebApplicationException("Unexpected problem: " + throwable.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @POST
+    @Path("/")
+    @Produces(MediaType.APPLICATION_JSON)
+    public void postCreateAgreement()
+    {
+        logger.log(Level.FINE, "AgreementsWS.postCreateAgreement");
+        try
+        {
+            throw new UnsupportedOperationException("Not yet implemented");
+        }
+        catch (Throwable throwable)
+        {
+            logger.log(Level.WARNING, "AgreementsWS.postCreateAgreement: Unable to create agreement", throwable);
+
+            throw new WebApplicationException("Unexpected problem: " + throwable.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -73,7 +94,43 @@ public class AgreementsWS
         }
         catch (Throwable throwable)
         {
-            logger.log(Level.WARNING, "AgreementsWS.getAgreementDetails: Unable get agreement details", throwable);
+            logger.log(Level.WARNING, "AgreementsWS.getAgreementDetails: Unable to get agreement details", throwable);
+
+            throw new WebApplicationException("Unexpected problem: " + throwable.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PUT
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public void putUpdatedAgreement(@PathParam("id") String id)
+    {
+        logger.log(Level.FINE, "AgreementsWS.putUpdatedAgreement: [" + id + "]");
+        try
+        {
+            throw new UnsupportedOperationException("Not yet implemented");
+        }
+        catch (Throwable throwable)
+        {
+            logger.log(Level.WARNING, "AgreementsWS.putUpdatedAgreement: Unable to update agreement", throwable);
+
+            throw new WebApplicationException("Unexpected problem: " + throwable.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @DELETE
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public void deleteTerminateAgreement(@PathParam("id") String id)
+    {
+        logger.log(Level.FINE, "AgreementsWS.deleteTerminateAgreement: [" + id + "]");
+        try
+        {
+            throw new UnsupportedOperationException("Not yet implemented");
+        }
+        catch (Throwable throwable)
+        {
+            logger.log(Level.WARNING, "AgreementsWS.deleteTerminateAgreement: Unable to terminate agreement", throwable);
 
             throw new WebApplicationException("Unexpected problem: " + throwable.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
         }

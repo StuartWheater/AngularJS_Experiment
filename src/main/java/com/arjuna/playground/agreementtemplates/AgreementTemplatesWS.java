@@ -45,7 +45,7 @@ public class AgreementTemplatesWS
         {
             logger.log(Level.WARNING, "AgreementTemplatesWS.getAgreementTemplateSummaries: Unable get agreement template summaries", throwable);
 
-            throw new WebApplicationException("", Response.Status.INTERNAL_SERVER_ERROR);
+            throw new WebApplicationException("Unexpected problem: " + throwable.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
         }
     }
 
