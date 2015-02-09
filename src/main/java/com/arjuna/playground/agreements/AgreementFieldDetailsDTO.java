@@ -15,13 +15,14 @@ public class AgreementFieldDetailsDTO implements Serializable
     {
     }
 
-    public AgreementFieldDetailsDTO(String name, String type, String label, String purpose, String defaultvalue, List<AgreementFieldValidationDTO> validations, List<AgreementFieldOptionValueDTO> optionvalues, Boolean required)
+    public AgreementFieldDetailsDTO(String name, String type, String label, String purpose, String value, Boolean mutable, List<AgreementFieldValidationDTO> validations, List<AgreementFieldOptionValueDTO> optionvalues, Boolean required)
     {
         _name         = name;
         _type         = type;
         _label        = label;
         _purpose      = purpose;
-        _defaultvalue = defaultvalue;
+        _value        = value;
+        _mutable      = mutable;
         _validations  = validations;
         _optionvalues = optionvalues;
         _required     = required;
@@ -57,14 +58,24 @@ public class AgreementFieldDetailsDTO implements Serializable
         _label = label;
     }
 
-    public String getDefaultvalue()
+    public String getValue()
     {
-        return _defaultvalue;
+        return _value;
     }
 
-    public void setDefaultvalue(String defaultvalue)
+    public void setValue(String value)
     {
-    	_defaultvalue = defaultvalue;
+    	_value = value;
+    }
+
+    public Boolean getMutable()
+    {
+        return _mutable;
+    }
+
+    public void setMutable(Boolean mutable)
+    {
+    	_mutable = mutable;
     }
 
     public String getPurpose()
@@ -111,7 +122,8 @@ public class AgreementFieldDetailsDTO implements Serializable
     private String                             _type;
     private String                             _label;
     private String                             _purpose;
-    private String                             _defaultvalue;
+    private String                             _value;
+    private Boolean                            _mutable;
     private List<AgreementFieldValidationDTO>  _validations;
     private List<AgreementFieldOptionValueDTO> _optionvalues;
     private Boolean                            _required;
