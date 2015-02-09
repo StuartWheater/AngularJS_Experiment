@@ -2,33 +2,23 @@
  * Copyright (c) 2015, Arjuna Technologies Limited, Newcastle-upon-Tyne, England. All rights reserved.
  */
 
-package com.arjuna.playground.templates;
+package com.arjuna.playground.agreementtemplates;
 
 import java.io.Serializable;
 
-public class TemplateDescriptionDTO implements Serializable
+public class AgreementTemplateSummaryDTO implements Serializable
 {
 	private static final long serialVersionUID = -8748474429953548487L;
 
-	public TemplateDescriptionDTO()
+	public AgreementTemplateSummaryDTO()
     {
     }
 
-    public TemplateDescriptionDTO(String url, String name, String purpose)
+    public AgreementTemplateSummaryDTO(String name, String purpose, String detailsURL)
     {
-        _url     = url;
-        _name    = name;
-        _purpose = purpose;
-    }
-
-    public String getURL()
-    {
-        return _url;
-    }
-
-    public void setURL(String url)
-    {
-    	_url = url;
+        _name       = name;
+        _purpose    = purpose;
+        _detailsURL = detailsURL;
     }
 
     public String getName()
@@ -51,7 +41,17 @@ public class TemplateDescriptionDTO implements Serializable
         _purpose = purpose;
     }
 
-    private String _url;
+    public String getDetailsURL()
+    {
+        return _detailsURL;
+    }
+
+    public void setDetailsURL(String detailsURL)
+    {
+    	_detailsURL = detailsURL;
+    }
+
     private String _name;
     private String _purpose;
+    private String _detailsURL;
 }

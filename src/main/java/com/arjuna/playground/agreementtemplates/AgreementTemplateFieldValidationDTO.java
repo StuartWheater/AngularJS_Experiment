@@ -2,19 +2,19 @@
  * Copyright (c) 2015, Arjuna Technologies Limited, Newcastle-upon-Tyne, England. All rights reserved.
  */
 
-package com.arjuna.playground.templates;
+package com.arjuna.playground.agreementtemplates;
 
 import java.io.Serializable;
 
-public class TemplateFieldValidationDTO implements Serializable
+public class AgreementTemplateFieldValidationDTO implements Serializable
 {
 	private static final long serialVersionUID = 7951533570770333991L;
 
-	public TemplateFieldValidationDTO()
+	public AgreementTemplateFieldValidationDTO()
     {
     }
 
-    public TemplateFieldValidationDTO(String regex, String errorMessage)
+    public AgreementTemplateFieldValidationDTO(String regex, String errorMessage)
     {
         _regex        = regex;
         _errorMessage = errorMessage;

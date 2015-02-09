@@ -2,20 +2,20 @@
  * Copyright (c) 2015, Arjuna Technologies Limited, Newcastle-upon-Tyne, England. All rights reserved.
  */
 
-package com.arjuna.playground.templates;
+package com.arjuna.playground.agreementtemplates;
 
 import java.io.Serializable;
 import java.util.List;
 
-public class TemplateFieldDescriptionDTO implements Serializable
+public class AgreementTemplateFieldDetailsDTO implements Serializable
 {
 	private static final long serialVersionUID = -3713818357435962472L;
 
-	public TemplateFieldDescriptionDTO()
+	public AgreementTemplateFieldDetailsDTO()
     {
     }
 
-    public TemplateFieldDescriptionDTO(String name, String type, String label, String purpose, List<TemplateFieldValidationDTO> validations, List<TemplateFieldOptionValueDTO> optionvalues, Boolean required)
+    public AgreementTemplateFieldDetailsDTO(String name, String type, String label, String purpose, List<AgreementTemplateFieldValidationDTO> validations, List<AgreementTemplateFieldOptionValueDTO> optionvalues, Boolean required)
     {
         _name         = name;
         _type         = type;
@@ -66,22 +66,22 @@ public class TemplateFieldDescriptionDTO implements Serializable
         _purpose = purpose;
     }
 
-    public List<TemplateFieldValidationDTO> getValidations()
+    public List<AgreementTemplateFieldValidationDTO> getValidations()
     {
         return _validations;
     }
 
-    public void setValidations(List<TemplateFieldValidationDTO> validations)
+    public void setValidations(List<AgreementTemplateFieldValidationDTO> validations)
     {
     	_validations = validations;
     }
 
-    public List<TemplateFieldOptionValueDTO> getOptionvalues()
+    public List<AgreementTemplateFieldOptionValueDTO> getOptionvalues()
     {
         return _optionvalues;
     }
 
-    public void setOptionvalues(List<TemplateFieldOptionValueDTO> optionvalues)
+    public void setOptionvalues(List<AgreementTemplateFieldOptionValueDTO> optionvalues)
     {
     	_optionvalues = optionvalues;
     }
@@ -96,11 +96,11 @@ public class TemplateFieldDescriptionDTO implements Serializable
     	_required = required;
     }
 
-    private String                            _name;
-    private String                            _type;
-    private String                            _label;
-    private String                            _purpose;
-    private List<TemplateFieldValidationDTO>  _validations;
-    private List<TemplateFieldOptionValueDTO> _optionvalues;
-    private Boolean                           _required;
+    private String                                     _name;
+    private String                                     _type;
+    private String                                     _label;
+    private String                                     _purpose;
+    private List<AgreementTemplateFieldValidationDTO>  _validations;
+    private List<AgreementTemplateFieldOptionValueDTO> _optionvalues;
+    private Boolean                                    _required;
 }
