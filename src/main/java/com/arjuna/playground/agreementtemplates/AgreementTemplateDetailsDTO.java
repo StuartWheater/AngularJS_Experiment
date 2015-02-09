@@ -15,10 +15,11 @@ public class AgreementTemplateDetailsDTO implements Serializable
     {
     }
 
-    public AgreementTemplateDetailsDTO(String name, String purpose, List<AgreementTemplateFieldDetailsDTO> detailsURL)
+    public AgreementTemplateDetailsDTO(String name, String purpose, List<AgreementTemplateFieldDetailsDTO> fieldsDetails)
     {
-        _name       = name;
-        _purpose    = purpose;
+        _name          = name;
+        _purpose       = purpose;
+        _fieldsDetails = fieldsDetails;
     }
 
     public String getName()

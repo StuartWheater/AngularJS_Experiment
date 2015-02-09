@@ -54,23 +54,28 @@ public class AgreementTemplatesWS
     @Produces(MediaType.APPLICATION_JSON)
     public GetAgreementTemplateDetailsResponse getAgreementTemplateDetails(@PathParam("id") String id)
     {
-        logger.log(Level.FINE, "AgreementTemplatesWS.getAgreementTemplateFieldDescriptions: [" + id + "]");
+        logger.log(Level.FINE, "AgreementTemplatesWS.getAgreementTemplateDetails: [" + id + "]");
         try
         {
-        	GetAgreementTemplateDetailsResponse response = new GetAgreementTemplateDetailsResponse();
-
         	AgreementTemplateDetailsDTO agreementTemplateDetails = createAgreementTemplateDetailsMap().get(id);
-        	response.setName(agreementTemplateDetails.getName());
-        	response.setPurpose(agreementTemplateDetails.getPurpose());
-        	response.setFieldsDetails(agreementTemplateDetails.getFieldsDetails());
+        	if (agreementTemplateDetails != null)
+        	{
+            	GetAgreementTemplateDetailsResponse response = new GetAgreementTemplateDetailsResponse();
 
-            return response;
+        	    response.setName(agreementTemplateDetails.getName());
+                response.setPurpose(agreementTemplateDetails.getPurpose());
+        	    response.setFieldsdetails(agreementTemplateDetails.getFieldsDetails());
+
+                return response;
+        	}
+        	else
+        		throw new WebApplicationException("", Response.Status.NOT_FOUND);
         }
         catch (Throwable throwable)
         {
-            logger.log(Level.WARNING, "AgreementTemplatesWS.getAgreementTemplateFieldDescriptions: Unable get agreement template field descriptions", throwable);
+            logger.log(Level.WARNING, "AgreementTemplatesWS.getAgreementTemplateDetails: Unable get agreement template field details", throwable);
 
-            throw new WebApplicationException("", Response.Status.INTERNAL_SERVER_ERROR);
+            throw new WebApplicationException("Unexpected problem: " + throwable.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -85,25 +90,25 @@ public class AgreementTemplatesWS
         AgreementTemplateSummaryDTO agreementTemplateSummary01 = new AgreementTemplateSummaryDTO();
         agreementTemplateSummary01.setName("XML Real-time internal agreement");
         agreementTemplateSummary01.setPurpose("Create an agreement with an internal party to supply real-time XML data.");
-        agreementTemplateSummary01.setDetailsURL(requestURL + "3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
+        agreementTemplateSummary01.setDetailsurl(requestURL + "3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
         agreementTemplateSummaries.add(agreementTemplateSummary01);
 
         AgreementTemplateSummaryDTO agreementTemplateSummary02 = new AgreementTemplateSummaryDTO();
         agreementTemplateSummary02.setName("JSON Real-time external agreement");
         agreementTemplateSummary02.setPurpose("Create an agreement with an external party to supply real-time JSON data.");
-        agreementTemplateSummary02.setDetailsURL(requestURL + "6e5747ef-41da-4344-a15e-e386695605f4");
+        agreementTemplateSummary02.setDetailsurl(requestURL + "6e5747ef-41da-4344-a15e-e386695605f4");
         agreementTemplateSummaries.add(agreementTemplateSummary02);
 
         AgreementTemplateSummaryDTO agreementTemplateSummary03 = new AgreementTemplateSummaryDTO();
         agreementTemplateSummary03.setName("XML Real-time internal agreement");
         agreementTemplateSummary03.setPurpose("Create an agreement with an internal party to supply real-time XML data.");
-        agreementTemplateSummary03.setDetailsURL(requestURL + "8693f1cd-8a77-4bca-87b0-46b3568657d4");
+        agreementTemplateSummary03.setDetailsurl(requestURL + "8693f1cd-8a77-4bca-87b0-46b3568657d4");
         agreementTemplateSummaries.add(agreementTemplateSummary03);
 
         AgreementTemplateSummaryDTO agreementTemplateSummary04 = new AgreementTemplateSummaryDTO();
         agreementTemplateSummary04.setName("JSON Real-time external agreement");
         agreementTemplateSummary04.setPurpose("Create an agreement with an external party to supply real-time JSON data.");
-        agreementTemplateSummary04.setDetailsURL(requestURL + "15bdb060-e2f3-4665-a231-fc325fb23e2b");
+        agreementTemplateSummary04.setDetailsurl(requestURL + "15bdb060-e2f3-4665-a231-fc325fb23e2b");
         agreementTemplateSummaries.add(agreementTemplateSummary04);
 
         return agreementTemplateSummaries;

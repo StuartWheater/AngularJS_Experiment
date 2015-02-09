@@ -2,20 +2,20 @@
  * Copyright (c) 2015, Arjuna Technologies Limited, Newcastle-upon-Tyne, England. All rights reserved.
  */
 
-package com.arjuna.playground.agreementtemplates;
+package com.arjuna.playground.agreements;
 
 import java.io.Serializable;
 import java.util.List;
 
-public class AgreementTemplateFieldDetailsDTO implements Serializable
+public class AgreementFieldDetailsDTO implements Serializable
 {
-	private static final long serialVersionUID = -3713818357435962472L;
+	private static final long serialVersionUID = 3221227096290747895L;
 
-	public AgreementTemplateFieldDetailsDTO()
+	public AgreementFieldDetailsDTO()
     {
     }
 
-    public AgreementTemplateFieldDetailsDTO(String name, String type, String label, String purpose, String defaultvalue, List<AgreementTemplateFieldValidationDTO> validations, List<AgreementTemplateFieldOptionValueDTO> optionvalues, Boolean required)
+    public AgreementFieldDetailsDTO(String name, String type, String label, String purpose, String defaultvalue, List<AgreementFieldValidationDTO> validations, List<AgreementFieldOptionValueDTO> optionvalues, Boolean required)
     {
         _name         = name;
         _type         = type;
@@ -77,22 +77,22 @@ public class AgreementTemplateFieldDetailsDTO implements Serializable
         _purpose = purpose;
     }
 
-    public List<AgreementTemplateFieldValidationDTO> getValidations()
+    public List<AgreementFieldValidationDTO> getValidations()
     {
         return _validations;
     }
 
-    public void setValidations(List<AgreementTemplateFieldValidationDTO> validations)
+    public void setValidations(List<AgreementFieldValidationDTO> validations)
     {
     	_validations = validations;
     }
 
-    public List<AgreementTemplateFieldOptionValueDTO> getOptionvalues()
+    public List<AgreementFieldOptionValueDTO> getOptionvalues()
     {
         return _optionvalues;
     }
 
-    public void setOptionvalues(List<AgreementTemplateFieldOptionValueDTO> optionvalues)
+    public void setOptionvalues(List<AgreementFieldOptionValueDTO> optionvalues)
     {
     	_optionvalues = optionvalues;
     }
@@ -107,12 +107,12 @@ public class AgreementTemplateFieldDetailsDTO implements Serializable
     	_required = required;
     }
 
-    private String                                     _name;
-    private String                                     _type;
-    private String                                     _label;
-    private String                                     _purpose;
-    private String                                     _defaultvalue;
-    private List<AgreementTemplateFieldValidationDTO>  _validations;
-    private List<AgreementTemplateFieldOptionValueDTO> _optionvalues;
-    private Boolean                                    _required;
+    private String                             _name;
+    private String                             _type;
+    private String                             _label;
+    private String                             _purpose;
+    private String                             _defaultvalue;
+    private List<AgreementFieldValidationDTO>  _validations;
+    private List<AgreementFieldOptionValueDTO> _optionvalues;
+    private Boolean                            _required;
 }

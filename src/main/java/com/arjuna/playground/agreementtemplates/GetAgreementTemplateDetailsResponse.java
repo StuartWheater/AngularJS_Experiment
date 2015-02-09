@@ -15,11 +15,11 @@ public class GetAgreementTemplateDetailsResponse implements Serializable
     {
     }
 
-    public GetAgreementTemplateDetailsResponse(String name, String purpose, List<AgreementTemplateFieldDetailsDTO> fieldsDetails)
+    public GetAgreementTemplateDetailsResponse(String name, String purpose, List<AgreementTemplateFieldDetailsDTO> fieldsdetails)
     {
     	_name          = name;
     	_purpose       = purpose;
-        _fieldsDetails = fieldsDetails;
+        _fieldsdetails = fieldsdetails;
     }
 
     public String getName()
@@ -42,17 +42,17 @@ public class GetAgreementTemplateDetailsResponse implements Serializable
     	_purpose = purpose;
     }
 
-    public List<AgreementTemplateFieldDetailsDTO> getFieldsDetails()
+    public List<AgreementTemplateFieldDetailsDTO> getFieldsdetails()
     {
-        return _fieldsDetails;
+        return _fieldsdetails;
     }
 
-    public void setFieldsDetails(List<AgreementTemplateFieldDetailsDTO> fieldsDetails)
+    public void setFieldsdetails(List<AgreementTemplateFieldDetailsDTO> fieldsdetails)
     {
-    	_fieldsDetails = fieldsDetails;
+    	_fieldsdetails = fieldsdetails;
     }
 
     private String                                 _name;
     private String                                 _purpose;
-    private List<AgreementTemplateFieldDetailsDTO> _fieldsDetails;
+    private List<AgreementTemplateFieldDetailsDTO> _fieldsdetails;
 }
