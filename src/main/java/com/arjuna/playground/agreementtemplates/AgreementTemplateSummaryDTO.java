@@ -8,9 +8,9 @@ import java.io.Serializable;
 
 public class AgreementTemplateSummaryDTO implements Serializable
 {
-	private static final long serialVersionUID = -8748474429953548487L;
+    private static final long serialVersionUID = -8748474429953548487L;
 
-	public AgreementTemplateSummaryDTO()
+    public AgreementTemplateSummaryDTO()
     {
     }
 
@@ -28,7 +28,7 @@ public class AgreementTemplateSummaryDTO implements Serializable
 
     public void setName(String name)
     {
-    	_name = name;
+        _name = name;
     }
 
     public String getPurpose()
@@ -48,7 +48,7 @@ public class AgreementTemplateSummaryDTO implements Serializable
 
     public void setDetailsurl(String detailsurl)
     {
-    	_detailsurl = detailsurl;
+        _detailsurl = detailsurl;
     }
 
     private String _name;

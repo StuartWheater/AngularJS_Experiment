@@ -35,11 +35,11 @@ public class AgreementTemplatesWS
         logger.log(Level.FINE, "AgreementTemplatesWS.getAgreementTemplateSummaries");
         try
         {
-        	GetAgreementTemplateSummariesResponse response = new GetAgreementTemplateSummariesResponse();
+            GetAgreementTemplateSummariesResponse response = new GetAgreementTemplateSummariesResponse();
 
-        	response.setSummaries(createAgreementTemplateSummaries());
+            response.setSummaries(createAgreementTemplateSummaries());
 
-        	return response;
+            return response;
         }
         catch (Throwable throwable)
         {
@@ -57,19 +57,19 @@ public class AgreementTemplatesWS
         logger.log(Level.FINE, "AgreementTemplatesWS.getAgreementTemplateDetails: [" + id + "]");
         try
         {
-        	AgreementTemplateDetailsDTO agreementTemplateDetails = createAgreementTemplateDetailsMap().get(id);
-        	if (agreementTemplateDetails != null)
-        	{
-            	GetAgreementTemplateDetailsResponse response = new GetAgreementTemplateDetailsResponse();
+            AgreementTemplateDetailsDTO agreementTemplateDetails = createAgreementTemplateDetailsMap().get(id);
+            if (agreementTemplateDetails != null)
+            {
+                GetAgreementTemplateDetailsResponse response = new GetAgreementTemplateDetailsResponse();
 
-        	    response.setName(agreementTemplateDetails.getName());
+                response.setName(agreementTemplateDetails.getName());
                 response.setPurpose(agreementTemplateDetails.getPurpose());
-        	    response.setFieldsdetails(agreementTemplateDetails.getFieldsDetails());
+                response.setFieldsdetails(agreementTemplateDetails.getFieldsDetails());
 
                 return response;
-        	}
-        	else
-        		throw new WebApplicationException("", Response.Status.NOT_FOUND);
+            }
+            else
+                throw new WebApplicationException("", Response.Status.NOT_FOUND);
         }
         catch (Throwable throwable)
         {
@@ -85,7 +85,7 @@ public class AgreementTemplatesWS
 
         String requestURL = _request.getRequestURL().toString();
         if (! requestURL.endsWith("/"))
-        	requestURL = requestURL + "/";
+            requestURL = requestURL + "/";
 
         AgreementTemplateSummaryDTO agreementTemplateSummary01 = new AgreementTemplateSummaryDTO();
         agreementTemplateSummary01.setName("XML Real-time internal agreement");

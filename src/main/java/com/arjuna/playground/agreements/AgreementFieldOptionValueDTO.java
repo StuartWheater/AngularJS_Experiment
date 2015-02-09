@@ -8,15 +8,15 @@ import java.io.Serializable;
 
 public class AgreementFieldOptionValueDTO implements Serializable
 {
-	private static final long serialVersionUID = -1336149293073696085L;
+    private static final long serialVersionUID = -1336149293073696085L;
 
-	public AgreementFieldOptionValueDTO()
+    public AgreementFieldOptionValueDTO()
     {
     }
 
     public AgreementFieldOptionValueDTO(String label, String value)
     {
-    	_label = label;
+        _label = label;
         _value = value;
     }
 
@@ -27,7 +27,7 @@ public class AgreementFieldOptionValueDTO implements Serializable
 
     public void setLabel(String label)
     {
-    	_label = label;
+        _label = label;
     }
 
     public String getErrorMessage()
@@ -37,7 +37,7 @@ public class AgreementFieldOptionValueDTO implements Serializable
 
     public void setErrorMessage(String value)
     {
-    	_value = value;
+        _value = value;
     }
 
     private String _label;

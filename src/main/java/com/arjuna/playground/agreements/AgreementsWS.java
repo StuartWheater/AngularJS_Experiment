@@ -35,11 +35,11 @@ public class AgreementsWS
         logger.log(Level.FINE, "AgreementsWS.getAgreementSummaries");
         try
         {
-        	GetAgreementSummariesResponse response = new GetAgreementSummariesResponse();
+            GetAgreementSummariesResponse response = new GetAgreementSummariesResponse();
 
-        	response.setSummaries(createAgreementSummaries());
+            response.setSummaries(createAgreementSummaries());
 
-        	return response;
+            return response;
         }
         catch (Throwable throwable)
         {
@@ -57,19 +57,19 @@ public class AgreementsWS
         logger.log(Level.FINE, "AgreementsWS.getAgreementDetails: [" + id + "]");
         try
         {
-        	AgreementDetailsDTO agreementDetails = createAgreementDetailsMap().get(id);
-        	if (agreementDetails != null)
-        	{
-            	GetAgreementDetailsResponse response = new GetAgreementDetailsResponse();
+            AgreementDetailsDTO agreementDetails = createAgreementDetailsMap().get(id);
+            if (agreementDetails != null)
+            {
+                GetAgreementDetailsResponse response = new GetAgreementDetailsResponse();
 
-        	    response.setName(agreementDetails.getName());
+                response.setName(agreementDetails.getName());
                 response.setComment(agreementDetails.getComment());
-        	    response.setFieldsDetails(agreementDetails.getFieldsDetails());
+                response.setFieldsDetails(agreementDetails.getFieldsDetails());
 
                 return response;
-        	}
-        	else
-        		throw new WebApplicationException("", Response.Status.NOT_FOUND);
+            }
+            else
+                throw new WebApplicationException("", Response.Status.NOT_FOUND);
         }
         catch (Throwable throwable)
         {
@@ -85,7 +85,7 @@ public class AgreementsWS
 
         String requestURL = _request.getRequestURL().toString();
         if (! requestURL.endsWith("/"))
-        	requestURL = requestURL + "/";
+            requestURL = requestURL + "/";
 
         AgreementSummaryDTO agreementSummary01 = new AgreementSummaryDTO();
         agreementSummary01.setName("XML Real-time internal agreement");

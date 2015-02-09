@@ -9,16 +9,16 @@ import java.util.List;
 
 public class GetAgreementTemplateDetailsResponse implements Serializable
 {
-	private static final long serialVersionUID = 6674234214010832766L;
+    private static final long serialVersionUID = 6674234214010832766L;
 
-	public GetAgreementTemplateDetailsResponse()
+    public GetAgreementTemplateDetailsResponse()
     {
     }
 
     public GetAgreementTemplateDetailsResponse(String name, String purpose, List<AgreementTemplateFieldDetailsDTO> fieldsdetails)
     {
-    	_name          = name;
-    	_purpose       = purpose;
+        _name          = name;
+        _purpose       = purpose;
         _fieldsdetails = fieldsdetails;
     }
 
@@ -29,7 +29,7 @@ public class GetAgreementTemplateDetailsResponse implements Serializable
 
     public void setName(String name)
     {
-    	_name = name;
+        _name = name;
     }
 
     public String getPurpose()
@@ -39,7 +39,7 @@ public class GetAgreementTemplateDetailsResponse implements Serializable
 
     public void setPurpose(String purpose)
     {
-    	_purpose = purpose;
+        _purpose = purpose;
     }
 
     public List<AgreementTemplateFieldDetailsDTO> getFieldsdetails()
@@ -49,7 +49,7 @@ public class GetAgreementTemplateDetailsResponse implements Serializable
 
     public void setFieldsdetails(List<AgreementTemplateFieldDetailsDTO> fieldsdetails)
     {
-    	_fieldsdetails = fieldsdetails;
+        _fieldsdetails = fieldsdetails;
     }
 
     private String                                 _name;

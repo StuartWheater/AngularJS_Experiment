@@ -8,9 +8,9 @@ import java.io.Serializable;
 
 public class AgreementSummaryDTO implements Serializable
 {
-	private static final long serialVersionUID = -283230959738414113L;
+    private static final long serialVersionUID = -283230959738414113L;
 
-	public AgreementSummaryDTO()
+    public AgreementSummaryDTO()
     {
     }
 
@@ -29,7 +29,7 @@ public class AgreementSummaryDTO implements Serializable
 
     public void setName(String name)
     {
-    	_name = name;
+        _name = name;
     }
 
     public String getComment()
@@ -39,7 +39,7 @@ public class AgreementSummaryDTO implements Serializable
 
     public void setComment(String comment)
     {
-    	_comment = comment;
+        _comment = comment;
     }
 
     public String getStatefieldname()
@@ -49,7 +49,7 @@ public class AgreementSummaryDTO implements Serializable
 
     public void setStatefieldname(String statefieldname)
     {
-    	_statefieldname = statefieldname;
+        _statefieldname = statefieldname;
     }
 
     public String getDetailsurl()
@@ -59,7 +59,7 @@ public class AgreementSummaryDTO implements Serializable
 
     public void setDetailsurl(String detailsurl)
     {
-    	_detailsurl = detailsurl;
+        _detailsurl = detailsurl;
     }
 
     private String _name;

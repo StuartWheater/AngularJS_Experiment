@@ -9,15 +9,15 @@ import java.util.List;
 
 public class GetAgreementTemplateSummariesResponse implements Serializable
 {
-	private static final long serialVersionUID = 1337181268252578682L;
+    private static final long serialVersionUID = 1337181268252578682L;
 
-	public GetAgreementTemplateSummariesResponse()
+    public GetAgreementTemplateSummariesResponse()
     {
     }
 
     public GetAgreementTemplateSummariesResponse(String name, List<AgreementTemplateSummaryDTO> summaries)
     {
-    	_summaries = summaries;
+        _summaries = summaries;
     }
 
     public List<AgreementTemplateSummaryDTO> getSummaries()
@@ -27,7 +27,7 @@ public class GetAgreementTemplateSummariesResponse implements Serializable
 
     public void setSummaries(List<AgreementTemplateSummaryDTO> summaries)
     {
-    	_summaries = summaries;
+        _summaries = summaries;
     }
 
     private List<AgreementTemplateSummaryDTO> _summaries;

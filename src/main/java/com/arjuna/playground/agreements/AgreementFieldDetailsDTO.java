@@ -9,9 +9,9 @@ import java.util.List;
 
 public class AgreementFieldDetailsDTO implements Serializable
 {
-	private static final long serialVersionUID = 3221227096290747895L;
+    private static final long serialVersionUID = 3221227096290747895L;
 
-	public AgreementFieldDetailsDTO()
+    public AgreementFieldDetailsDTO()
     {
     }
 
@@ -35,7 +35,7 @@ public class AgreementFieldDetailsDTO implements Serializable
 
     public void setName(String name)
     {
-    	_name = name;
+        _name = name;
     }
 
     public String getType()
@@ -65,7 +65,7 @@ public class AgreementFieldDetailsDTO implements Serializable
 
     public void setValue(String value)
     {
-    	_value = value;
+       _value = value;
     }
 
     public Boolean getMutable()
@@ -75,7 +75,7 @@ public class AgreementFieldDetailsDTO implements Serializable
 
     public void setMutable(Boolean mutable)
     {
-    	_mutable = mutable;
+        _mutable = mutable;
     }
 
     public String getPurpose()
@@ -95,7 +95,7 @@ public class AgreementFieldDetailsDTO implements Serializable
 
     public void setValidations(List<AgreementFieldValidationDTO> validations)
     {
-    	_validations = validations;
+        _validations = validations;
     }
 
     public List<AgreementFieldOptionValueDTO> getOptionvalues()
@@ -105,7 +105,7 @@ public class AgreementFieldDetailsDTO implements Serializable
 
     public void setOptionvalues(List<AgreementFieldOptionValueDTO> optionvalues)
     {
-    	_optionvalues = optionvalues;
+        _optionvalues = optionvalues;
     }
 
     public Boolean getRequired()
@@ -115,7 +115,7 @@ public class AgreementFieldDetailsDTO implements Serializable
 
     public void setRequired(Boolean required)
     {
-    	_required = required;
+        _required = required;
     }
 
     private String                             _name;

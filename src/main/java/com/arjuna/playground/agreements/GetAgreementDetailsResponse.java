@@ -9,17 +9,17 @@ import java.util.List;
 
 public class GetAgreementDetailsResponse implements Serializable
 {
-	private static final long serialVersionUID = -4389007794387245776L;
+    private static final long serialVersionUID = -4389007794387245776L;
 
-	public GetAgreementDetailsResponse()
+    public GetAgreementDetailsResponse()
     {
     }
 
     public GetAgreementDetailsResponse(String name, String comment, String statefieldname, List<AgreementFieldDetailsDTO> fieldsdetails)
     {
-    	_name           = name;
-    	_comment        = comment;
-    	_statefieldname = statefieldname;
+        _name           = name;
+        _comment        = comment;
+        _statefieldname = statefieldname;
         _fieldsdetails  = fieldsdetails;
     }
 
@@ -30,7 +30,7 @@ public class GetAgreementDetailsResponse implements Serializable
 
     public void setName(String name)
     {
-    	_name = name;
+        _name = name;
     }
 
     public String getComment()
@@ -40,7 +40,7 @@ public class GetAgreementDetailsResponse implements Serializable
 
     public void setComment(String comment)
     {
-    	_comment = comment;
+        _comment = comment;
     }
 
     public String getStatefieldname()
@@ -50,7 +50,7 @@ public class GetAgreementDetailsResponse implements Serializable
 
     public void setStatefieldname(String statefieldname)
     {
-    	_statefieldname = statefieldname;
+        _statefieldname = statefieldname;
     }
 
     public List<AgreementFieldDetailsDTO> getFieldsDetails()
@@ -60,7 +60,7 @@ public class GetAgreementDetailsResponse implements Serializable
 
     public void setFieldsDetails(List<AgreementFieldDetailsDTO> fieldsDetails)
     {
-    	_fieldsdetails = fieldsDetails;
+        _fieldsdetails = fieldsDetails;
     }
 
     private String                         _name;

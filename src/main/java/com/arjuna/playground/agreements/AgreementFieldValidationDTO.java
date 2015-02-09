@@ -8,9 +8,9 @@ import java.io.Serializable;
 
 public class AgreementFieldValidationDTO implements Serializable
 {
-	private static final long serialVersionUID = 3503727197652547858L;
+    private static final long serialVersionUID = 3503727197652547858L;
 
-	public AgreementFieldValidationDTO()
+    public AgreementFieldValidationDTO()
     {
     }
 
@@ -27,7 +27,7 @@ public class AgreementFieldValidationDTO implements Serializable
 
     public void setRegex(String regex)
     {
-    	_regex = regex;
+        _regex = regex;
     }
 
     public String getErrormessage()
@@ -37,7 +37,7 @@ public class AgreementFieldValidationDTO implements Serializable
 
     public void setErrormessage(String errormessage)
     {
-    	_errormessage = errormessage;
+        _errormessage = errormessage;
     }
 
     private String _regex;

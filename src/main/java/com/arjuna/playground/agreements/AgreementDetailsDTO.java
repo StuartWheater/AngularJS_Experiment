@@ -9,9 +9,9 @@ import java.util.List;
 
 public class AgreementDetailsDTO implements Serializable
 {
-	private static final long serialVersionUID = 9151184769468182277L;
+    private static final long serialVersionUID = 9151184769468182277L;
 
-	public AgreementDetailsDTO()
+    public AgreementDetailsDTO()
     {
     }
 
@@ -29,7 +29,7 @@ public class AgreementDetailsDTO implements Serializable
 
     public void setName(String name)
     {
-    	_name = name;
+        _name = name;
     }
 
     public String getComment()
@@ -39,7 +39,7 @@ public class AgreementDetailsDTO implements Serializable
 
     public void setComment(String comment)
     {
-    	_comment = comment;
+        _comment = comment;
     }
 
     public List<AgreementFieldDetailsDTO> getFieldsDetails()
@@ -49,7 +49,7 @@ public class AgreementDetailsDTO implements Serializable
 
     public void setFieldsDetails(List<AgreementFieldDetailsDTO> fieldsDetails)
     {
-    	_fieldsDetails = fieldsDetails;
+        _fieldsDetails = fieldsDetails;
     }
 
     private String                         _name;
