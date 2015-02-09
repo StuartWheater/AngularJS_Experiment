@@ -116,21 +116,29 @@ public class AgreementTemplatesWS
         AgreementTemplateDetailsDTO agreementTemplateDetails01 = new AgreementTemplateDetailsDTO();
         agreementTemplateDetails01.setName("XML Real-time internal agreement");
         agreementTemplateDetails01.setPurpose("Create an agreement with an internal party to supply real-time XML data.");
+        List<AgreementTemplateFieldDetailsDTO> agreementTemplateFieldDetails01 = new LinkedList<AgreementTemplateFieldDetailsDTO>();
+        agreementTemplateDetails01.setFieldsDetails(agreementTemplateFieldDetails01);
         agreementTemplateDetailsMap.put("3f7e5ba2-1e03-4641-b477-36d3ecb18de8", agreementTemplateDetails01);
 
         AgreementTemplateDetailsDTO agreementTemplateDetails02 = new AgreementTemplateDetailsDTO();
         agreementTemplateDetails02.setName("JSON Real-time external agreement");
         agreementTemplateDetails02.setPurpose("Create an agreement with an external party to supply real-time JSON data.");
+        List<AgreementTemplateFieldDetailsDTO> agreementTemplateFieldDetails02 = new LinkedList<AgreementTemplateFieldDetailsDTO>();
+        agreementTemplateDetails02.setFieldsDetails(agreementTemplateFieldDetails02);
         agreementTemplateDetailsMap.put("6e5747ef-41da-4344-a15e-e386695605f4", agreementTemplateDetails02);
 
         AgreementTemplateDetailsDTO agreementTemplateDetails03 = new AgreementTemplateDetailsDTO();
         agreementTemplateDetails03.setName("XML Real-time internal agreement");
         agreementTemplateDetails03.setPurpose("Create an agreement with an internal party to supply real-time XML data.");
+        List<AgreementTemplateFieldDetailsDTO> agreementTemplateFieldDetails03 = new LinkedList<AgreementTemplateFieldDetailsDTO>();
+        agreementTemplateDetails03.setFieldsDetails(agreementTemplateFieldDetails03);
         agreementTemplateDetailsMap.put("8693f1cd-8a77-4bca-87b0-46b3568657d4", agreementTemplateDetails03);
 
         AgreementTemplateDetailsDTO agreementTemplateDetails04 = new AgreementTemplateDetailsDTO();
         agreementTemplateDetails04.setName("JSON Real-time external agreement");
         agreementTemplateDetails04.setPurpose("Create an agreement with an external party to supply real-time JSON data.");
+        List<AgreementTemplateFieldDetailsDTO> agreementTemplateFieldDetails04 = new LinkedList<AgreementTemplateFieldDetailsDTO>();
+        agreementTemplateDetails04.setFieldsDetails(agreementTemplateFieldDetails04);
         agreementTemplateDetailsMap.put("15bdb060-e2f3-4665-a231-fc325fb23e2b", agreementTemplateDetails04);
 
         return agreementTemplateDetailsMap;
