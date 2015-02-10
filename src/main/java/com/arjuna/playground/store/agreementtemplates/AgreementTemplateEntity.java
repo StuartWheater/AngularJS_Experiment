@@ -6,7 +6,6 @@ package com.arjuna.playground.store.agreementtemplates;
 
 import java.io.Serializable;
 import java.util.List;
-
 import javax.persistence.Entity;
 
 @Entity

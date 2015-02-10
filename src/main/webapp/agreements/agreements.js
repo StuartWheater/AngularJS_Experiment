@@ -12,7 +12,6 @@ angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$log
 
     $scope.reload = function ()
     {
-        $log.debug('reload');
         Loader.load().then(function (data)
         {
             $scope.agreements = data.summaries;
@@ -73,12 +72,10 @@ angular.module('agreementsModule').factory('Loader', ['$http', '$q', '$log', fun
             $http.get('/ws/agreements').
                 success(function (data, status, headers, config)
                 {
-                    $log.debug('http - success: ' + data);
                     deferred.resolve(data);
                 }).
                 error(function (data, status, headers, config)
                 {
-                    $log.debug('http - error: ' + data);
                     deferred.resolve([ ]);
                 });
 
