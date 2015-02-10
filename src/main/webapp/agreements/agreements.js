@@ -16,7 +16,7 @@ angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$log
         alert('reload');
         Loader.load().then(function (data)
         {
-        	$scope.agreements = data;
+            $scope.agreements = data;
         });
     };
 
@@ -69,9 +69,9 @@ angular.module('agreementsModule').factory('Loader', ['$scope', '$http', '$q', '
     return {
         load: function ()
         {
-        	var deferred = $q.defer();
+            var deferred = $q.defer();
 
-        	$http.get('/ws/agreements').
+            $http.get('/ws/agreements').
             success(function (data, status, headers, config)
             {
                 $log.debug('http - success: ' + data);
@@ -83,7 +83,7 @@ angular.module('agreementsModule').factory('Loader', ['$scope', '$http', '$q', '
                 deferred.resolve([ ]);
             });
 
-        	return deferred.promise;
+            return deferred.promise;
         }
     };
 }]);
