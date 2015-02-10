@@ -2,9 +2,10 @@
 
 var mainApp = angular.module('mainApp', ['ui.router', 'agreementsModule', 'agreementModule', 'agreementtemplatesModule', 'agreementtemplateModule']);
 
-angular.module('mainApp').controller('mainCtrl', ['$scope', function ($scope)
+angular.module('mainApp').controller('mainCtrl', [ '$scope', function ($scope)
 {
-    $scope.features = [ {"name": "Name", "text": "Text", "status": "active"} ];
+    $scope.currentAgreement         = null;
+    $scope.currentAgreementTemplate = null;
 }]);
 
 angular.module('mainApp').config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider)

@@ -2,7 +2,7 @@
 
 angular.module('agreementsModule', []);
 
-angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$log', 'Loader', function ($scope, $log, Loader)
+angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$log', 'Loader', 'Current', function ($scope, $log, Loader, Current)
 {
     $scope.currentPage = 1;
     $scope.pageSize    = 6;
@@ -15,6 +15,11 @@ angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$log
         {
             $scope.agreements = data.summaries;
         });
+    };
+
+    $scope.setCurrentAgreement(currentAgreement)
+    {
+        Current.agreement = currentAgreement;
     };
 
     $scope.setCurrentPage = function (currentIndex)
