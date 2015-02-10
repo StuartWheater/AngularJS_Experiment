@@ -68,13 +68,13 @@ angular.module('agreementsModule').service('loader', ['$scope', '$http', '$log',
             {
                 $scope.agreements = data;
                 $log.debug('http - success');
-                alert('http - success');
+                alert('http - success' + data);
             }).
             error(function (data, status, headers, config)
             {
                 $scope.agreements = [ ];
                 $log.debug('http - error');
-                alert('http - error');
+                alert('http - error' + data);
             });
     };
 }]);
