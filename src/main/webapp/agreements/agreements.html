@@ -1,14 +1,16 @@
 <div ng-controller="agreementsCtrl">
     <h2>
         Agreements
-        <a class="btn-sm btn-default pull-right" ng-click="reload()">
-            <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
-            refresh
-        </a>
-        <a class="btn-sm btn-default pull-right" ng-click="create()">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            create
-        </a>
+        <div class="btn-group">
+            <a class="btn-sm btn-default pull-right" ng-click="reload()">
+                <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                refresh
+            </a>
+            <a class="btn-sm btn-default pull-right" ng-click="create()">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                create
+            </a>
+        </div>
     </h2>
 
     <div class="list-group">
@@ -16,14 +18,16 @@
            <h3 class="list-group-item-heading">
                {{agreement.name}}
                <span class="label-sm label-default">{{agreement.status}}</span>
-               <a class="btn-sm btn-info pull-right" ui-sref="agreement">
-                   <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-                   terminate
-               </a>
-               <a class="btn-sm btn-info pull-right" ui-sref="agreement">
-                   <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-                   examine
-               </a>
+               <div class="btn-group">
+                   <a class="btn-sm btn-info pull-right" ui-sref="agreement">
+                       <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                       terminate
+                   </a>
+                   <a class="btn-sm btn-info pull-right" ui-sref="agreement">
+                       <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                       examine
+                   </a>
+               </div>
            </h3>
            <p class="list-group-item-text">{{agreement.purpose}}</p>
         </div>
