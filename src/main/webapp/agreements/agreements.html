@@ -1,14 +1,14 @@
 <div ng-controller="agreementsCtrl">
     <h2>
         Agreements
-        <div class="btn-group">
-            <a class="btn-sm btn-default pull-right" ng-click="reload()">
-                <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
-                refresh
-            </a>
-            <a class="btn-sm btn-default pull-right" ng-click="create()">
+        <div class="btn-group pull-right">
+            <a class="btn-sm btn-default" ng-click="create()">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                 create
+            </a>
+            <a class="btn-sm btn-default" ng-click="reload()">
+                <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                refresh
             </a>
         </div>
     </h2>
@@ -18,16 +18,16 @@
            <h3 class="list-group-item-heading">
                {{agreement.name}}
                <span class="label-sm label-default">{{agreement.status}}</span>
-               <div class="btn-group">
-                   <a class="btn-sm btn-info pull-right" ui-sref="agreement">
+               <div class="btn-group pull-right">
+                   <a class="btn-sm btn-info" ui-sref="agreement">
                        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
                        terminate
                    </a>
-                   <a class="btn-sm btn-info pull-right" ui-sref="agreement">
+                   <a class="btn-sm btn-info" ui-sref="agreement">
                        <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
                        examine
                    </a>
-               </div>
+              </div>
            </h3>
            <p class="list-group-item-text">{{agreement.purpose}}</p>
         </div>
