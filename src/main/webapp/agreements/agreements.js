@@ -66,9 +66,8 @@ angular.module('agreementsModule').filter('onpage', ['$scope', function ($scope)
 
 angular.module('agreementsModule').factory('Loader', ['$scope', '$http', '$q', '$log', function ($scope, $http, $q, $log)
 {
-    return
-    {
-        load: void function ()
+    return {
+        load: function ()
         {
         	var deferred = $q.defer();
 
@@ -83,8 +82,8 @@ angular.module('agreementsModule').factory('Loader', ['$scope', '$http', '$q', '
                 $log.debug('http - error: ' + data);
                 deferred.resolve([ ]);
             });
-        	
+
         	return deferred.promise;
-        };
+        }
     };
 }]);
