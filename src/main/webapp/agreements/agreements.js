@@ -2,7 +2,7 @@
 
 angular.module('agreementsModule', []);
 
-angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$log', 'loader', function ($scope, $log, loader)
+angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$log', 'Loader', function ($scope, $log, Loader)
 {
     $scope.currentPage = 1;
     $scope.pageSize    = 6;
@@ -14,7 +14,10 @@ angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$log
     {
         $log.debug('reload');
         alert('reload');
-        loader.load();
+        Loader.load().then(function (data)
+        {
+        	$scope.agreements = data;
+        });
     };
 
     $scope.setCurrentPage = function (currentIndex)
@@ -61,22 +64,27 @@ angular.module('agreementsModule').filter('onpage', ['$scope', function ($scope)
     }
 }]);
 
-angular.module('agreementsModule').service('loader', ['$scope', '$http', '$log', function ($scope, $http, $log)
+angular.module('agreementsModule').factory('Loader', ['$scope', '$http', '$q', '$log', function ($scope, $http, $q, $log)
 {
-    this.load = function ()
+    return
     {
-        $http.get('/ws/agreements').
+        load: function ()
+        {
+        	var deferred = $q.defer();
+
+        	$http.get('/ws/agreements').
             success(function (data, status, headers, config)
             {
-                $scope.agreements = data;
-                $log.debug('http - success');
-                alert('http - success' + data);
+                $log.debug('http - success: ' + data);
+                deferred.resolve(data);
             }).
             error(function (data, status, headers, config)
             {
-                $scope.agreements = [ ];
-                $log.debug('http - error');
-                alert('http - error' + data);
+                $log.debug('http - error: ' + data);
+                deferred.resolve([ ]);
             });
+        	
+        	return deferred.promise;
+        };
     };
 }]);
