@@ -68,7 +68,7 @@ angular.module('agreementsModule').factory('Loader', ['$scope', '$http', '$q', '
 {
     return
     {
-        load: function ()
+        load: void function ()
         {
         	var deferred = $q.defer();
 
