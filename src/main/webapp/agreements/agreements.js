@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('agreementsModule', []);
 
 angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$log', 'loader', function ($scope, $log, loader)

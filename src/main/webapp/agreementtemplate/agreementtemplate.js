@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('agreementtemplateModule', []);
 
 angular.module('agreementtemplateModule').controller('agreementtemplateCtrl', ['$scope', function ($scope)
