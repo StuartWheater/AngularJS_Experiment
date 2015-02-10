@@ -64,7 +64,7 @@ angular.module('agreementsModule').filter('onpage', ['$scope', function ($scope)
     }
 }]);
 
-angular.module('agreementsModule').factory('Loader', ['$scope', '$http', '$q', '$log', function ($scope, $http, $q, $log)
+angular.module('agreementsModule').factory('Loader', ['$http', '$q', '$log', function ($http, $q, $log)
 {
     return {
         load: function ()
