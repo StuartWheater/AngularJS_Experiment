@@ -6,7 +6,6 @@ angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$log
 {
     $scope.currentPage = 1;
     $scope.pageSize    = 6;
-    $scope.pageNumbers = ['1'];
 
     $scope.agreements = [ ];
 
@@ -35,7 +34,7 @@ angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$log
 
     $scope.needsPagination = function ()
     {
-        return $scope.numberOfPages() > 0;
+        return $scope.agreements.length > $scope.pageSize;
     };
 
     $scope.havePreviousPage = function ()
