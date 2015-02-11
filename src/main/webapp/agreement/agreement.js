@@ -2,7 +2,7 @@
 
 angular.module('agreementModule', []);
 
-angular.module('agreementModule').controller('agreementController', ['$scope', '$stateParam', '$log', 'AgreementLoader', function ($scope, $stateParam, $log, AgreementLoader)
+angular.module('agreementModule').controller('agreementController', ['$scope', '$stateParams', '$log', 'AgreementLoader', function ($scope, $stateParams, $log, AgreementLoader)
 {
     $scope.agreement = { };
 
@@ -15,7 +15,7 @@ angular.module('agreementModule').controller('agreementController', ['$scope', '
         });
     };
 
-    this.reload($stateParam.detailsurl);
+    this.reload($stateParams.detailsurl);
 }]);
 
 angular.module('agreementModule').factory('AgreementLoader', ['$http', '$q', '$log', function ($http, $q, $log)
