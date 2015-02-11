@@ -178,6 +178,7 @@ public class AgreementsWS
         AgreementDetailsDTO agreementDetails01 = new AgreementDetailsDTO();
         agreementDetails01.setName("XML Real-time internal agreement");
         agreementDetails01.setComment("Create an agreement with an internal party to supply real-time XML data.");
+        agreementDetails01.setStatefieldname("status");
         List<AgreementFieldDetailsDTO> agreementFieldDetails01 = new LinkedList<AgreementFieldDetailsDTO>();
         AgreementFieldDetailsDTO agreementFieldDetails01of01 = new AgreementFieldDetailsDTO();
         agreementFieldDetails01of01.setName("owner");
@@ -187,6 +188,22 @@ public class AgreementsWS
         agreementFieldDetails01of01.setValue("Owner");
         agreementFieldDetails01of01.setMutable(true);
         agreementFieldDetails01.add(agreementFieldDetails01of01);
+        AgreementFieldDetailsDTO agreementFieldDetails02of01 = new AgreementFieldDetailsDTO();
+        agreementFieldDetails02of01.setName("status");
+        agreementFieldDetails02of01.setType("text");
+        agreementFieldDetails02of01.setLabel("Status");
+        agreementFieldDetails02of01.setPurpose("Status of agreement");
+        agreementFieldDetails02of01.setValue("Active");
+        agreementFieldDetails02of01.setMutable(false);
+        agreementFieldDetails01.add(agreementFieldDetails02of01);
+        AgreementFieldDetailsDTO agreementFieldDetails03of01 = new AgreementFieldDetailsDTO();
+        agreementFieldDetails03of01.setName("datasourceurl");
+        agreementFieldDetails03of01.setType("text");
+        agreementFieldDetails03of01.setLabel("Data Source URL");
+        agreementFieldDetails03of01.setPurpose("The location of Data Source");
+        agreementFieldDetails03of01.setValue("http://example.org/datasoource/01");
+        agreementFieldDetails03of01.setMutable(true);
+        agreementFieldDetails01.add(agreementFieldDetails03of01);
         agreementDetails01.setFieldsdetails(agreementFieldDetails01);
         agreementDetailsMap.put("3f7e5ba2-1e03-4641-b477-36d3ecb18de8", agreementDetails01);
 
