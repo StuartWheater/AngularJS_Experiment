@@ -125,7 +125,7 @@ public class AgreementTemplatesWS
         AgreementTemplateFieldDetailsDTO agreementTemplateFieldDetails01of01 = new AgreementTemplateFieldDetailsDTO();
         agreementTemplateFieldDetails01of01.setName("owner");
         agreementTemplateFieldDetails01of01.setType("text");
-        agreementTemplateFieldDetails01of01.setLabel("Owner");
+        agreementTemplateFieldDetails01of01.setLabel("The Owner");
         agreementTemplateFieldDetails01of01.setPurpose("The owner of the Data Source");
         agreementTemplateFieldDetails01of01.setRequired(true);
         agreementTemplateFieldDetails01.add(agreementTemplateFieldDetails01of01);
