@@ -10,6 +10,8 @@
 
     <p class="list-group-item-text">{{agreement.comment}}</p>
 
+    <p class="list-group-item-text">Created: {{agreement.createdate}}</p>
+
     <div class="list-group">
         <div ng-repeat="fielddetails in agreement.fieldsdetails" class="list-group-item">
         <h3 class="list-group-item-heading">{{fielddetails.label}}
