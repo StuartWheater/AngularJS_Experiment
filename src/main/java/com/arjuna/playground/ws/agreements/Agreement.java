@@ -5,22 +5,35 @@
 package com.arjuna.playground.ws.agreements;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
-public class AgreementDetailsDTO implements Serializable
+public class Agreement implements Serializable
 {
     private static final long serialVersionUID = 9151184769468182277L;
 
-    public AgreementDetailsDTO()
+    public Agreement()
     {
     }
 
-    public AgreementDetailsDTO(String name, String comment, String statefieldname, List<AgreementFieldDetailsDTO> fieldsdetails)
+    public Agreement(String id, String name, String comment, String statefieldname, Date createddate, List<AgreementFieldDetailsDTO> fieldsdetails)
     {
+        _id             = id;
         _name           = name;
         _comment        = comment;
         _statefieldname = statefieldname;
+        _createddate    = createddate;
         _fieldsdetails  = fieldsdetails;
+    }
+
+    public String getId()
+    {
+        return _id;
+    }
+
+    public void setId(String id)
+    {
+        _id = id;
     }
 
     public String getName()
@@ -53,6 +66,16 @@ public class AgreementDetailsDTO implements Serializable
         _statefieldname = statefieldname;
     }
 
+    public Date getCreateddate()
+    {
+        return _createddate;
+    }
+
+    public void setCreateddate(Date createddate)
+    {
+        _createddate = createddate;
+    }
+
     public List<AgreementFieldDetailsDTO> getFieldsdetails()
     {
         return _fieldsdetails;
@@ -63,8 +86,10 @@ public class AgreementDetailsDTO implements Serializable
         _fieldsdetails = fieldsdetails;
     }
 
+    private String                         _id;
     private String                         _name;
     private String                         _comment;
     private String                         _statefieldname;
+    private Date                           _createddate;
     private List<AgreementFieldDetailsDTO> _fieldsdetails;
 }

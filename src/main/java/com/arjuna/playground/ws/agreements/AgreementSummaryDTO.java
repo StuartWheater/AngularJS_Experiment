@@ -5,6 +5,7 @@
 package com.arjuna.playground.ws.agreements;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class AgreementSummaryDTO implements Serializable
 {
@@ -14,11 +15,23 @@ public class AgreementSummaryDTO implements Serializable
     {
     }
 
-    public AgreementSummaryDTO(String name, String comment, String detailsurl)
+    public AgreementSummaryDTO(String id, String name, String comment, Date createddate, String detailsurl)
     {
-        _name       = name;
-        _comment    = comment;
-        _detailsurl = detailsurl;
+        _id          = id;
+        _name        = name;
+        _comment     = comment;
+        _createddate = createddate;
+        _detailsurl  = detailsurl;
+    }
+
+    public String getId()
+    {
+        return _id;
+    }
+
+    public void setId(String id)
+    {
+        _id = id;
     }
 
     public String getName()
@@ -41,6 +54,16 @@ public class AgreementSummaryDTO implements Serializable
         _comment = comment;
     }
 
+    public Date getCreateddate()
+    {
+        return _createddate;
+    }
+
+    public void setCreateddate(Date createddate)
+    {
+        _createddate = createddate;
+    }
+
     public String getDetailsurl()
     {
         return _detailsurl;
@@ -51,7 +74,9 @@ public class AgreementSummaryDTO implements Serializable
         _detailsurl = detailsurl;
     }
 
+    private String _id;
     private String _name;
     private String _comment;
+    private Date   _createddate;
     private String _detailsurl;
 }

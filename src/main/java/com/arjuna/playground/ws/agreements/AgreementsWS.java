@@ -4,12 +4,14 @@
 
 package com.arjuna.playground.ws.agreements;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.ejb.Stateless;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.DELETE;
@@ -78,7 +80,7 @@ public class AgreementsWS
         logger.log(Level.FINE, "AgreementsWS.getAgreementDetails: [" + id + "]");
         try
         {
-            AgreementDetailsDTO agreementDetails = createAgreementDetailsMap().get(id);
+            Agreement agreementDetails = createAgreementDetailsMap().get(id);
             if (agreementDetails != null)
             {
                 GetAgreementDetailsResponse response = new GetAgreementDetailsResponse();
@@ -144,41 +146,55 @@ public class AgreementsWS
         if (! requestURL.endsWith("/"))
             requestURL = requestURL + "/";
 
+        Date now = new Date();
+        
         AgreementSummaryDTO agreementSummary01 = new AgreementSummaryDTO();
+        agreementSummary01.setId("3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
         agreementSummary01.setName("XML Real-time internal agreement");
         agreementSummary01.setComment("Create an agreement with an internal party to supply real-time XML data.");
+        agreementSummary01.setCreateddate(now);
         agreementSummary01.setDetailsurl(requestURL + "3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
         agreementSummaries.add(agreementSummary01);
 
         AgreementSummaryDTO agreementSummary02 = new AgreementSummaryDTO();
+        agreementSummary02.setId("6e5747ef-41da-4344-a15e-e386695605f4");
         agreementSummary02.setName("JSON Real-time external agreement");
         agreementSummary02.setComment("Create an agreement with an external party to supply real-time JSON data.");
+        agreementSummary02.setCreateddate(now);
         agreementSummary02.setDetailsurl(requestURL + "6e5747ef-41da-4344-a15e-e386695605f4");
         agreementSummaries.add(agreementSummary02);
 
         AgreementSummaryDTO agreementSummary03 = new AgreementSummaryDTO();
+        agreementSummary03.setId("8693f1cd-8a77-4bca-87b0-46b3568657d4");
         agreementSummary03.setName("XML Real-time internal agreement");
         agreementSummary03.setComment("Create an agreement with an internal party to supply real-time XML data.");
+        agreementSummary03.setCreateddate(now);
         agreementSummary03.setDetailsurl(requestURL + "8693f1cd-8a77-4bca-87b0-46b3568657d4");
         agreementSummaries.add(agreementSummary03);
 
         AgreementSummaryDTO agreementSummary04 = new AgreementSummaryDTO();
+        agreementSummary04.setId("15bdb060-e2f3-4665-a231-fc325fb23e2b");
         agreementSummary04.setName("JSON Real-time external agreement");
         agreementSummary04.setComment("Create an agreement with an external party to supply real-time JSON data.");
+        agreementSummary04.setCreateddate(now);
         agreementSummary04.setDetailsurl(requestURL + "15bdb060-e2f3-4665-a231-fc325fb23e2b");
         agreementSummaries.add(agreementSummary04);
 
         return agreementSummaries;
     }
 
-    private Map<String, AgreementDetailsDTO> createAgreementDetailsMap()
+    private Map<String, Agreement> createAgreementDetailsMap()
     {
-        Map<String, AgreementDetailsDTO> agreementDetailsMap = new HashMap<String, AgreementDetailsDTO>();
+        Map<String, Agreement> agreementDetailsMap = new HashMap<String, Agreement>();
 
-        AgreementDetailsDTO agreementDetails01 = new AgreementDetailsDTO();
+        Date now = new Date();
+ 
+        Agreement agreementDetails01 = new Agreement();
+        agreementDetails01.setId("3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
         agreementDetails01.setName("XML Real-time internal agreement");
         agreementDetails01.setComment("Create an agreement with an internal party to supply real-time XML data.");
         agreementDetails01.setStatefieldname("status");
+        agreementDetails01.setCreateddate(now);
         List<AgreementFieldDetailsDTO> agreementFieldDetails01 = new LinkedList<AgreementFieldDetailsDTO>();
         AgreementFieldDetailsDTO agreementFieldDetails01of01 = new AgreementFieldDetailsDTO();
         agreementFieldDetails01of01.setName("owner");
@@ -207,26 +223,32 @@ public class AgreementsWS
         agreementDetails01.setFieldsdetails(agreementFieldDetails01);
         agreementDetailsMap.put("3f7e5ba2-1e03-4641-b477-36d3ecb18de8", agreementDetails01);
 
-        AgreementDetailsDTO agreementDetails02 = new AgreementDetailsDTO();
+        Agreement agreementDetails02 = new Agreement();
+        agreementDetails02.setId("6e5747ef-41da-4344-a15e-e386695605f4");
         agreementDetails02.setName("JSON Real-time external agreement");
         agreementDetails02.setComment("Create an agreement with an external party to supply real-time JSON data.");
+        agreementDetails02.setCreateddate(now);
         List<AgreementFieldDetailsDTO> agreementFieldDetails02 = new LinkedList<AgreementFieldDetailsDTO>();
         agreementDetails02.setFieldsdetails(agreementFieldDetails02);
         agreementDetailsMap.put("6e5747ef-41da-4344-a15e-e386695605f4", agreementDetails02);
 
-        AgreementDetailsDTO agreementDetails03 = new AgreementDetailsDTO();
+        Agreement agreementDetails03 = new Agreement();
+        agreementDetails03.setId("8693f1cd-8a77-4bca-87b0-46b3568657d4");
         agreementDetails03.setName("XML Real-time internal agreement");
         agreementDetails03.setComment("Create an agreement with an internal party to supply real-time XML data.");
+        agreementDetails03.setCreateddate(now);
         List<AgreementFieldDetailsDTO> agreementFieldDetails03 = new LinkedList<AgreementFieldDetailsDTO>();
         agreementDetails03.setFieldsdetails(agreementFieldDetails03);
         agreementDetailsMap.put("8693f1cd-8a77-4bca-87b0-46b3568657d4", agreementDetails03);
 
-        AgreementDetailsDTO agreementDetails04 = new AgreementDetailsDTO();
+        Agreement agreementDetails04 = new Agreement();
+        agreementDetails04.setId("3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
         agreementDetails04.setName("JSON Real-time external agreement");
         agreementDetails04.setComment("Create an agreement with an external party to supply real-time JSON data.");
+        agreementDetails04.setCreateddate(now);
         List<AgreementFieldDetailsDTO> agreementFieldDetails04 = new LinkedList<AgreementFieldDetailsDTO>();
         agreementDetails04.setFieldsdetails(agreementFieldDetails04);
-        agreementDetailsMap.put("15bdb060-e2f3-4665-a231-fc325fb23e2b", agreementDetails04);
+        agreementDetailsMap.put("3f7e5ba2-1e03-4641-b477-36d3ecb18de8", agreementDetails04);
 
         return agreementDetailsMap;
     }
