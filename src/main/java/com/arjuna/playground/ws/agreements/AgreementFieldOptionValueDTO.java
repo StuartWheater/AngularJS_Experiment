@@ -2,19 +2,19 @@
  * Copyright (c) 2015, Arjuna Technologies Limited, Newcastle-upon-Tyne, England. All rights reserved.
  */
 
-package com.arjuna.playground.agreementtemplates;
+package com.arjuna.playground.ws.agreements;
 
 import java.io.Serializable;
 
-public class AgreementTemplateFieldOptionValueDTO implements Serializable
+public class AgreementFieldOptionValueDTO implements Serializable
 {
-    private static final long serialVersionUID = 1196562485350118256L;
+    private static final long serialVersionUID = -1336149293073696085L;
 
-    public AgreementTemplateFieldOptionValueDTO()
+    public AgreementFieldOptionValueDTO()
     {
     }
 
-    public AgreementTemplateFieldOptionValueDTO(String label, String value)
+    public AgreementFieldOptionValueDTO(String label, String value)
     {
         _label = label;
         _value = value;

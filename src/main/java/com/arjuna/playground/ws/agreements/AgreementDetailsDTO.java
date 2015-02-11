@@ -2,20 +2,20 @@
  * Copyright (c) 2015, Arjuna Technologies Limited, Newcastle-upon-Tyne, England. All rights reserved.
  */
 
-package com.arjuna.playground.agreements;
+package com.arjuna.playground.ws.agreements;
 
 import java.io.Serializable;
 import java.util.List;
 
-public class GetAgreementDetailsResponse implements Serializable
+public class AgreementDetailsDTO implements Serializable
 {
-    private static final long serialVersionUID = -4389007794387245776L;
+    private static final long serialVersionUID = 9151184769468182277L;
 
-    public GetAgreementDetailsResponse()
+    public AgreementDetailsDTO()
     {
     }
 
-    public GetAgreementDetailsResponse(String name, String comment, String statefieldname, List<AgreementFieldDetailsDTO> fieldsdetails)
+    public AgreementDetailsDTO(String name, String comment, String statefieldname, List<AgreementFieldDetailsDTO> fieldsdetails)
     {
         _name           = name;
         _comment        = comment;
@@ -53,14 +53,14 @@ public class GetAgreementDetailsResponse implements Serializable
         _statefieldname = statefieldname;
     }
 
-    public List<AgreementFieldDetailsDTO> getFieldsDetails()
+    public List<AgreementFieldDetailsDTO> getFieldsdetails()
     {
         return _fieldsdetails;
     }
 
-    public void setFieldsDetails(List<AgreementFieldDetailsDTO> fieldsDetails)
+    public void setFieldsdetails(List<AgreementFieldDetailsDTO> fieldsdetails)
     {
-        _fieldsdetails = fieldsDetails;
+        _fieldsdetails = fieldsdetails;
     }
 
     private String                         _name;

@@ -2,22 +2,22 @@
  * Copyright (c) 2015, Arjuna Technologies Limited, Newcastle-upon-Tyne, England. All rights reserved.
  */
 
-package com.arjuna.playground.agreementtemplates;
+package com.arjuna.playground.ws.agreements;
 
 import java.io.Serializable;
 
-public class AgreementTemplateSummaryDTO implements Serializable
+public class AgreementSummaryDTO implements Serializable
 {
-    private static final long serialVersionUID = -8748474429953548487L;
+    private static final long serialVersionUID = -283230959738414113L;
 
-    public AgreementTemplateSummaryDTO()
+    public AgreementSummaryDTO()
     {
     }
 
-    public AgreementTemplateSummaryDTO(String name, String purpose, String detailsurl)
+    public AgreementSummaryDTO(String name, String comment, String detailsurl)
     {
         _name       = name;
-        _purpose    = purpose;
+        _comment    = comment;
         _detailsurl = detailsurl;
     }
 
@@ -31,14 +31,14 @@ public class AgreementTemplateSummaryDTO implements Serializable
         _name = name;
     }
 
-    public String getPurpose()
+    public String getComment()
     {
-        return _purpose;
+        return _comment;
     }
 
-    public void setPurpose(String purpose)
+    public void setComment(String comment)
     {
-        _purpose = purpose;
+        _comment = comment;
     }
 
     public String getDetailsurl()
@@ -52,6 +52,6 @@ public class AgreementTemplateSummaryDTO implements Serializable
     }
 
     private String _name;
-    private String _purpose;
+    private String _comment;
     private String _detailsurl;
 }

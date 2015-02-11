@@ -2,7 +2,7 @@
  * Copyright (c) 2015, Arjuna Technologies Limited, Newcastle-upon-Tyne, England. All rights reserved.
  */
 
-package com.arjuna.playground.agreements;
+package com.arjuna.playground.ws.agreements;
 
 import java.io.Serializable;
 import java.util.List;

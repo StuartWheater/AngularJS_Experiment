@@ -2,7 +2,7 @@
  * Copyright (c) 2015, Arjuna Technologies Limited, Newcastle-upon-Tyne, England. All rights reserved.
  */
 
-package com.arjuna.playground.agreements;
+package com.arjuna.playground.ws.agreements;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -85,7 +85,7 @@ public class AgreementsWS
 
                 response.setName(agreementDetails.getName());
                 response.setComment(agreementDetails.getComment());
-                response.setFieldsDetails(agreementDetails.getFieldsDetails());
+                response.setFieldsdetails(agreementDetails.getFieldsdetails());
 
                 return response;
             }
@@ -186,28 +186,28 @@ public class AgreementsWS
         agreementFieldDetails01of01.setLabel("Owner");
         agreementFieldDetails01of01.setMutable(true);
         agreementFieldDetails01.add(agreementFieldDetails01of01);
-        agreementDetails01.setFieldsDetails(agreementFieldDetails01);
+        agreementDetails01.setFieldsdetails(agreementFieldDetails01);
         agreementDetailsMap.put("3f7e5ba2-1e03-4641-b477-36d3ecb18de8", agreementDetails01);
 
         AgreementDetailsDTO agreementDetails02 = new AgreementDetailsDTO();
         agreementDetails02.setName("JSON Real-time external agreement");
         agreementDetails02.setComment("Create an agreement with an external party to supply real-time JSON data.");
         List<AgreementFieldDetailsDTO> agreementFieldDetails02 = new LinkedList<AgreementFieldDetailsDTO>();
-        agreementDetails02.setFieldsDetails(agreementFieldDetails02);
+        agreementDetails02.setFieldsdetails(agreementFieldDetails02);
         agreementDetailsMap.put("6e5747ef-41da-4344-a15e-e386695605f4", agreementDetails02);
 
         AgreementDetailsDTO agreementDetails03 = new AgreementDetailsDTO();
         agreementDetails03.setName("XML Real-time internal agreement");
         agreementDetails03.setComment("Create an agreement with an internal party to supply real-time XML data.");
         List<AgreementFieldDetailsDTO> agreementFieldDetails03 = new LinkedList<AgreementFieldDetailsDTO>();
-        agreementDetails03.setFieldsDetails(agreementFieldDetails03);
+        agreementDetails03.setFieldsdetails(agreementFieldDetails03);
         agreementDetailsMap.put("8693f1cd-8a77-4bca-87b0-46b3568657d4", agreementDetails03);
 
         AgreementDetailsDTO agreementDetails04 = new AgreementDetailsDTO();
         agreementDetails04.setName("JSON Real-time external agreement");
         agreementDetails04.setComment("Create an agreement with an external party to supply real-time JSON data.");
         List<AgreementFieldDetailsDTO> agreementFieldDetails04 = new LinkedList<AgreementFieldDetailsDTO>();
-        agreementDetails04.setFieldsDetails(agreementFieldDetails04);
+        agreementDetails04.setFieldsdetails(agreementFieldDetails04);
         agreementDetailsMap.put("15bdb060-e2f3-4665-a231-fc325fb23e2b", agreementDetails04);
 
         return agreementDetailsMap;
