@@ -20,7 +20,7 @@ angular.module('mainApp').config(['$stateProvider', '$urlRouterProvider', functi
         }).
         state('agreement',
         {
-            url: '/',
+            url: '/:detailsurl',
             templateUrl: 'agreement/agreement.html'
         }).
         state('agreementtemplates',

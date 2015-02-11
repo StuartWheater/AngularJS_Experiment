@@ -2,7 +2,7 @@
 
 angular.module('agreementsModule', []);
 
-angular.module('agreementsModule').controller('agreementsController', ['$scope', '$state', '$log', 'Loader', function ($scope, $state, $log, Loader)
+angular.module('agreementsModule').controller('agreementsController', ['$scope', '$state', '$log', 'AgreementsLoader', function ($scope, $state, $log, AgreementsLoader)
 {
     $scope.currentPage = 1;
     $scope.pageSize    = 6;
@@ -11,7 +11,7 @@ angular.module('agreementsModule').controller('agreementsController', ['$scope',
 
     this.reload = function ()
     {
-        Loader.load().then(function (data)
+    	AgreementsLoader.load().then(function (data)
         {
             $scope.agreements = data.summaries;
             $log.debug("in reload-load: " + JSON.stringify($scope.agreements));
@@ -22,9 +22,8 @@ angular.module('agreementsModule').controller('agreementsController', ['$scope',
 
     this.examine = function (agreement)
     {
-        $log.debug("in examine: " + JSON.stringify(agreement));
-        $scope.agreement = agreement;
-        $state.go('agreement', { "agreement": agreement });
+        $log.debug("in examine: " + agreement.detailsurl);
+        $state.go('agreement', { "detailsurl": agreement.detailsurl });
     };
     
     this.setCurrentPage = function (currentIndex)
@@ -76,7 +75,7 @@ angular.module('agreementsModule').filter('onpage', ['$scope', function ($scope)
     }
 }]);
 
-angular.module('agreementsModule').factory('Loader', ['$http', '$q', '$log', function ($http, $q, $log)
+angular.module('agreementsModule').factory('AgreementsLoader', ['$http', '$q', '$log', function ($http, $q, $log)
 {
     return {
         load: function ()
