@@ -23,6 +23,7 @@ angular.module('agreementsModule').controller('agreementsController', ['$scope',
     this.examine = function (agreement)
     {
         $log.debug("in examine: " + JSON.stringify(agreement));
+        $scope.agreement = agreement;
         $state.go('agreement', { "agreement": agreement });
     };
     

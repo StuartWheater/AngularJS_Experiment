@@ -8,9 +8,9 @@
     <p class="list-group-item-text">{{agreement.comment}}</p>
 
     <div class="list-group">
-        <div ng-repeat="feature in agreementCtrl.features" class="list-group-item">
-        <h3 class="list-group-item-heading">{{agreement.comment}} <span class="badge">{{feature.status}}</span></h3>
-        <p class="list-group-item-text">{{feature.text}}</p>
-        <p class="list-group-item-text">Other {{main.currentAgreement}}</p>
+        <div ng-repeat="fielddetails in agreement.fieldsdetails" class="list-group-item">
+        <h3 class="list-group-item-heading">{{fielddetails.label}} <span class="badge">{{fielddetails.name}} <span class="badge">{{fielddetails.type}}</span></h3>
+        <p class="list-group-item-text">{{fielddetails.purpose}}</p>
+        <p class="list-group-item-text">Value {{fielddetails.value}}</p>
     </div>
 </div>

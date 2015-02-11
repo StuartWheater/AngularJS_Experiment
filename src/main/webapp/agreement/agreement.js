@@ -2,10 +2,9 @@
 
 angular.module('agreementModule', []);
 
-angular.module('agreementModule').controller('agreementController', ['$scope', '$stateParams', '$log', function ($scope, $stateParams, $log)
+angular.module('agreementModule').controller('agreementController', ['$scope', '$log', function ($scope, $log)
 {
-    $scope.agreement = $stateParams.agreement;
+    $scope.agreement = { };
 
-    $log.debug("in agreementController - whole    : " + JSON.stringify($stateParams));
-    $log.debug("in agreementController - agreement: " + JSON.stringify($stateParams.agreement));
+    $log.debug("in agreementController - agreement: " + JSON.stringify($scope.agreement));
 }]);
