@@ -2,14 +2,14 @@
 
 angular.module('agreementsModule', []);
 
-angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$log', 'Loader', function ($scope, $log, Loader)
+angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$state', '$log', 'Loader', function ($scope, $state, $log, Loader)
 {
     $scope.currentPage = 1;
     $scope.pageSize    = 6;
 
     $scope.agreements = [ ];
 
-    $scope.reload = function ()
+    this.reload = function ()
     {
         Loader.load().then(function (data)
         {
@@ -17,39 +17,50 @@ angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$log
         });
     };
 
-    $scope.reload();
+    this.reload();
 
-    $scope.setCurrentPage = function (currentIndex)
+    this.examine = function (agreement)
     {
-        $scope.currentPage = currentIndex + 1;
+    	$log.debug("in examine")
+        $state.go('agreement', agreement);
+    };
+    
+    this.setCurrentPage = function (currentIndex)
+    {
+        $scope.currentPage = currentIndex;
     };
 
-    $scope.decreaseCurrentPage = function()
+    this.decreaseCurrentPage = function()
     {
         $scope.currentPage--;
     };
 
-    $scope.isCurrentPage = function (currentPage)
+    this.increaseCurrentPage = function()
+    {
+        $scope.currentPage--;
+    };
+
+    this.isCurrentPage = function (currentPage)
     {
         return $scope.currentPage == currentPage;
     };
 
-    $scope.needsPagination = function ()
+    this.needsPagination = function ()
     {
         return $scope.agreements.length > $scope.pageSize;
     };
 
-    $scope.havePreviousPage = function ()
+    this.havePreviousPage = function ()
     {
         return $scope.currentPage > 1;
     };
 
-    $scope.haveNextPage = function ()
+    this.haveNextPage = function ()
     {
-        return $scope.currentPage < $scope.numberOfPages();
+        return $scope.currentPage < this.numberOfPages();
     };
 
-    $scope.numberOfPages = function ()
+    this.numberOfPages = function ()
     {
         return Math.ceil($scope.agreements.length / $scope.pageSize);
     };
