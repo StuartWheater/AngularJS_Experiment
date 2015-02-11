@@ -85,8 +85,10 @@ public class AgreementsWS
             {
                 GetAgreementDetailsResponse response = new GetAgreementDetailsResponse();
 
+                response.setId(agreementDetails.getId());
                 response.setName(agreementDetails.getName());
                 response.setComment(agreementDetails.getComment());
+                response.setCreateddate(agreementDetails.getCreateddate());
                 response.setFieldsdetails(agreementDetails.getFieldsdetails());
 
                 return response;
