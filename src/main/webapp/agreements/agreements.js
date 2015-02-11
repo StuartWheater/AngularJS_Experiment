@@ -23,7 +23,7 @@ angular.module('agreementsModule').controller('agreementsController', ['$scope',
     this.examine = function (agreement)
     {
         $log.debug("in examine: " + JSON.stringify(agreement));
-        $state.go('agreement', agreement);
+        $state.go('agreement', { "agreement": agreement });
     };
     
     this.setCurrentPage = function (currentIndex)
