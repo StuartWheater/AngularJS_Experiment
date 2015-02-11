@@ -122,9 +122,22 @@ public class AgreementTemplatesWS
         agreementTemplateDetails01.setName("XML Real-time internal agreement");
         agreementTemplateDetails01.setPurpose("Create an agreement with an internal party to supply real-time XML data.");
         List<AgreementTemplateFieldDetailsDTO> agreementTemplateFieldDetails01 = new LinkedList<AgreementTemplateFieldDetailsDTO>();
+        AgreementTemplateFieldDetailsDTO agreementTemplateFieldDetails01of01 = new AgreementTemplateFieldDetailsDTO();
+        agreementTemplateFieldDetails01of01.setName("owner");
+        agreementTemplateFieldDetails01of01.setType("text");
+        agreementTemplateFieldDetails01of01.setLabel("Owner");
+        agreementTemplateFieldDetails01of01.setPurpose("The owner of the Data Source");
+        agreementTemplateFieldDetails01of01.setRequired(true);
+        agreementTemplateFieldDetails01.add(agreementTemplateFieldDetails01of01);
+        AgreementTemplateFieldDetailsDTO agreementTemplateFieldDetails02of01 = new AgreementTemplateFieldDetailsDTO();
+        agreementTemplateFieldDetails02of01.setName("datasourceurl");
+        agreementTemplateFieldDetails02of01.setType("text");
+        agreementTemplateFieldDetails02of01.setLabel("Data Source URL");
+        agreementTemplateFieldDetails02of01.setPurpose("The location of Data Source");
+        agreementTemplateFieldDetails02of01.setRequired(true);
+        agreementTemplateFieldDetails01.add(agreementTemplateFieldDetails02of01);
         agreementTemplateDetails01.setFieldsDetails(agreementTemplateFieldDetails01);
         agreementTemplateDetailsMap.put("3f7e5ba2-1e03-4641-b477-36d3ecb18de8", agreementTemplateDetails01);
-
         AgreementTemplateDetailsDTO agreementTemplateDetails02 = new AgreementTemplateDetailsDTO();
         agreementTemplateDetails02.setName("JSON Real-time external agreement");
         agreementTemplateDetails02.setPurpose("Create an agreement with an external party to supply real-time JSON data.");
