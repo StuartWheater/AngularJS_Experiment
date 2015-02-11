@@ -14,7 +14,7 @@ angular.module('agreementsModule').controller('agreementsController', ['$scope',
         Loader.load().then(function (data)
         {
             $scope.agreements = data.summaries;
-            $log.debug("in examine: " + JSON.stringify($scope.agreements.toString()));
+            $log.debug("in reload-load: " + JSON.stringify($scope.agreements.toString()));
         });
     };
 
@@ -22,7 +22,7 @@ angular.module('agreementsModule').controller('agreementsController', ['$scope',
 
     this.examine = function (agreement)
     {
-        $log.debug("in examine");
+        $log.debug("in examine: " + JSON.stringify(agreement.toString()));
         $state.go('agreement', agreement);
     };
     
