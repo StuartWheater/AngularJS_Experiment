@@ -14,7 +14,6 @@ angular.module('agreementsModule').controller('agreementsController', ['$scope',
     	AgreementsLoader.load().then(function (data)
         {
             $scope.agreements = data.summaries;
-            $log.debug("in reload-load: " + JSON.stringify($scope.agreements));
         });
     };
 
@@ -22,7 +21,6 @@ angular.module('agreementsModule').controller('agreementsController', ['$scope',
 
     this.examine = function (agreement)
     {
-        $log.debug("in examine: " + agreement.detailsurl);
         $state.go('agreement', { "detailsurl": agreement.detailsurl });
     };
     

@@ -11,7 +11,6 @@ angular.module('agreementModule').controller('agreementController', ['$scope', '
 		AgreementLoader.load(url).then(function (data)
         {
             $scope.agreement = data;
-            $log.debug("in load-url: " + JSON.stringify($scope.agreement));
         });
     };
 
