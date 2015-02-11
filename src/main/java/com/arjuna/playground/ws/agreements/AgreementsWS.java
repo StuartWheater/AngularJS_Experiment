@@ -244,13 +244,13 @@ public class AgreementsWS
         agreementDetailsMap.put("8693f1cd-8a77-4bca-87b0-46b3568657d4", agreementDetails03);
 
         Agreement agreementDetails04 = new Agreement();
-        agreementDetails04.setId("3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
+        agreementDetails04.setId("15bdb060-e2f3-4665-a231-fc325fb23e2b");
         agreementDetails04.setName("JSON Real-time external agreement");
         agreementDetails04.setComment("Create an agreement with an external party to supply real-time JSON data.");
         agreementDetails04.setCreateddate(now);
         List<AgreementFieldDetailsDTO> agreementFieldDetails04 = new LinkedList<AgreementFieldDetailsDTO>();
         agreementDetails04.setFieldsdetails(agreementFieldDetails04);
-        agreementDetailsMap.put("3f7e5ba2-1e03-4641-b477-36d3ecb18de8", agreementDetails04);
+        agreementDetailsMap.put("15bdb060-e2f3-4665-a231-fc325fb23e2b", agreementDetails04);
 
         return agreementDetailsMap;
     }
