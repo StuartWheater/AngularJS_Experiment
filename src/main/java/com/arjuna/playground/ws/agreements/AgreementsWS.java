@@ -191,12 +191,12 @@ public class AgreementsWS
 
         Date now = new Date();
  
-        Agreement agreementDetails01 = new Agreement();
-        agreementDetails01.setId("3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
-        agreementDetails01.setName("XML Real-time internal agreement");
-        agreementDetails01.setComment("Create an agreement with an internal party to supply real-time XML data.");
-        agreementDetails01.setStatefieldname("status");
-        agreementDetails01.setCreateddate(now);
+        Agreement agreement01 = new Agreement();
+        agreement01.setId("3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
+        agreement01.setName("XML Real-time internal agreement");
+        agreement01.setComment("Create an agreement with an internal party to supply real-time XML data.");
+        agreement01.setStatefieldname("status");
+        agreement01.setCreateddate(now);
         List<AgreementFieldDetailsDTO> agreementFieldDetails01 = new LinkedList<AgreementFieldDetailsDTO>();
         AgreementFieldDetailsDTO agreementFieldDetails01of01 = new AgreementFieldDetailsDTO();
         agreementFieldDetails01of01.setName("owner");
@@ -222,8 +222,8 @@ public class AgreementsWS
         agreementFieldDetails03of01.setValue("http://example.org/datasoource/01");
         agreementFieldDetails03of01.setMutable(true);
         agreementFieldDetails01.add(agreementFieldDetails03of01);
-        agreementDetails01.setFieldsdetails(agreementFieldDetails01);
-        agreementDetailsMap.put("3f7e5ba2-1e03-4641-b477-36d3ecb18de8", agreementDetails01);
+        agreement01.setFieldsdetails(agreementFieldDetails01);
+        agreementDetailsMap.put("3f7e5ba2-1e03-4641-b477-36d3ecb18de8", agreement01);
 
         Agreement agreementDetails02 = new Agreement();
         agreementDetails02.setId("6e5747ef-41da-4344-a15e-e386695605f4");
