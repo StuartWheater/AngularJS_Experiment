@@ -1,9 +1,15 @@
 <div ng-controller="agreementController as agreementCtrl">
-    <h2>Agreement</h3>
+    <h2>
+        Agreement
+    </h2>
+
+    <h3 class="list-group-item-heading">{{agreement.name}}</h3>
+
+    <p class="list-group-item-text">{{agreement.comment}}</p>
 
     <div class="list-group">
-        <div ng-repeat="feature in features" class="list-group-item">
-        <h3 class="list-group-item-heading">{{feature.name}} <span class="badge">{{feature.status}}</span></h3>
+        <div ng-repeat="feature in agreementCtrl.features" class="list-group-item">
+        <h3 class="list-group-item-heading">{{agreement.comment}} <span class="badge">{{feature.status}}</span></h3>
         <p class="list-group-item-text">{{feature.text}}</p>
         <p class="list-group-item-text">Other {{main.currentAgreement}}</p>
     </div>

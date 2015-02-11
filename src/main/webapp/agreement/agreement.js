@@ -2,7 +2,7 @@
 
 angular.module('agreementModule', []);
 
-angular.module('agreementModule').controller('agreementController', ['$scope', '$stateParam', function ($scope, $stateParam)
+angular.module('agreementModule').controller('agreementController', ['$scope', '$stateParams', function ($scope, $stateParam)
 {
-    $scope.agreement = $stateParam;
+    $scope.agreement = $stateParams;
 }]);

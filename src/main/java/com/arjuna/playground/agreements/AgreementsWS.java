@@ -179,6 +179,13 @@ public class AgreementsWS
         agreementDetails01.setName("XML Real-time internal agreement");
         agreementDetails01.setComment("Create an agreement with an internal party to supply real-time XML data.");
         List<AgreementFieldDetailsDTO> agreementFieldDetails01 = new LinkedList<AgreementFieldDetailsDTO>();
+        AgreementFieldDetailsDTO agreementFieldDetails01of01 = new AgreementFieldDetailsDTO();
+        agreementFieldDetails01of01.setName("owner");
+        agreementFieldDetails01of01.setType("text");
+        agreementFieldDetails01of01.setPurpose("The owner of the Data Source");
+        agreementFieldDetails01of01.setLabel("Owner");
+        agreementFieldDetails01of01.setMutable(true);
+        agreementFieldDetails01.add(agreementFieldDetails01of01);
         agreementDetails01.setFieldsDetails(agreementFieldDetails01);
         agreementDetailsMap.put("3f7e5ba2-1e03-4641-b477-36d3ecb18de8", agreementDetails01);
 
