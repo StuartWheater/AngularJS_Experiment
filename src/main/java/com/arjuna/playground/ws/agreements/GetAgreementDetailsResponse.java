@@ -78,13 +78,13 @@ public class GetAgreementDetailsResponse implements Serializable
 
     public List<AgreementFieldDetailsDTO> getFieldsdetails()
     {
-        System.err.println("getFieldsdetails: " + _fieldsdetails);
+        System.err.println("GetAgreementDetailsResponse.getFieldsdetails: " + _fieldsdetails);
         return _fieldsdetails;
     }
 
     public void setFieldsdetails(List<AgreementFieldDetailsDTO> fieldsdetails)
     {
-         System.err.println("setFieldsdetails: " + fieldsdetails);
+         System.err.println("GetAgreementDetailsResponse.setFieldsdetails: " + fieldsdetails);
         _fieldsdetails = fieldsdetails;
     }
 

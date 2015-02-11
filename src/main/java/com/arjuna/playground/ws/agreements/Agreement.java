@@ -78,11 +78,13 @@ public class Agreement implements Serializable
 
     public List<AgreementFieldDetailsDTO> getFieldsdetails()
     {
+        System.err.println("Agreement.getFieldsdetails: " + _fieldsdetails);
         return _fieldsdetails;
     }
 
     public void setFieldsdetails(List<AgreementFieldDetailsDTO> fieldsdetails)
     {
+        System.err.println("Agreement.setFieldsdetails: " + fieldsdetails);
         _fieldsdetails = fieldsdetails;
     }
 
