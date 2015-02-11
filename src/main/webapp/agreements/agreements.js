@@ -2,7 +2,7 @@
 
 angular.module('agreementsModule', []);
 
-angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$state', '$log', 'Loader', function ($scope, $state, $log, Loader)
+angular.module('agreementsModule').controller('agreementsController', ['$scope', '$state', '$log', 'Loader', function ($scope, $state, $log, Loader)
 {
     $scope.currentPage = 1;
     $scope.pageSize    = 6;
@@ -21,7 +21,7 @@ angular.module('agreementsModule').controller('agreementsCtrl', ['$scope', '$sta
 
     this.examine = function (agreement)
     {
-    	$log.debug("in examine")
+    	$log.debug("in examine");
         $state.go('agreement', agreement);
     };
     

@@ -2,7 +2,7 @@
 
 var mainApp = angular.module('mainApp', ['ui.router', 'agreementsModule', 'agreementModule', 'agreementtemplatesModule', 'agreementtemplateModule']);
 
-angular.module('mainApp').controller('mainCtrl', [ '$scope', function ($scope)
+angular.module('mainApp').controller('mainController', [ '$scope', function ($scope)
 {
     $scope.currentAgreement         = null;
     $scope.currentAgreementTemplate = null;
