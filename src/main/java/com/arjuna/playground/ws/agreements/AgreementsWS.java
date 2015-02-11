@@ -182,8 +182,9 @@ public class AgreementsWS
         AgreementFieldDetailsDTO agreementFieldDetails01of01 = new AgreementFieldDetailsDTO();
         agreementFieldDetails01of01.setName("owner");
         agreementFieldDetails01of01.setType("text");
-        agreementFieldDetails01of01.setPurpose("The owner of the Data Source");
         agreementFieldDetails01of01.setLabel("Owner");
+        agreementFieldDetails01of01.setPurpose("The owner of the Data Source");
+        agreementFieldDetails01of01.setValue("Owner");
         agreementFieldDetails01of01.setMutable(true);
         agreementFieldDetails01.add(agreementFieldDetails01of01);
         agreementDetails01.setFieldsdetails(agreementFieldDetails01);

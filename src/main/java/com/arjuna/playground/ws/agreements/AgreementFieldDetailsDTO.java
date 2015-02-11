@@ -15,7 +15,7 @@ public class AgreementFieldDetailsDTO implements Serializable
     {
     }
 
-    public AgreementFieldDetailsDTO(String name, String type, String label, String purpose, String value, Boolean mutable, List<AgreementFieldValidationDTO> validations, List<AgreementFieldOptionValueDTO> optionvalues, Boolean required)
+    public AgreementFieldDetailsDTO(String name, String type, String label, String purpose, String value, Boolean mutable, List<AgreementFieldValidationDTO> validations, List<AgreementFieldOptionValueDTO> optionvalues)
     {
         _name         = name;
         _type         = type;
@@ -25,7 +25,6 @@ public class AgreementFieldDetailsDTO implements Serializable
         _mutable      = mutable;
         _validations  = validations;
         _optionvalues = optionvalues;
-        _required     = required;
     }
 
     public String getName()
@@ -108,16 +107,6 @@ public class AgreementFieldDetailsDTO implements Serializable
         _optionvalues = optionvalues;
     }
 
-    public Boolean getRequired()
-    {
-        return _required;
-    }
-
-    public void setRequired(Boolean required)
-    {
-        _required = required;
-    }
-
     private String                             _name;
     private String                             _type;
     private String                             _label;
@@ -126,5 +115,4 @@ public class AgreementFieldDetailsDTO implements Serializable
     private Boolean                            _mutable;
     private List<AgreementFieldValidationDTO>  _validations;
     private List<AgreementFieldOptionValueDTO> _optionvalues;
-    private Boolean                            _required;
 }
