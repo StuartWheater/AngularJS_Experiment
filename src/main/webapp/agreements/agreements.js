@@ -23,7 +23,12 @@ angular.module('agreementsModule').controller('agreementsController', ['$scope',
     {
         $state.go('agreement', { "detailsurl": agreement.detailsurl });
     };
-    
+
+    this.examine = function (agreement)
+    {
+        $state.go('agreementtemplates');
+    };
+
     this.setCurrentPage = function (currentIndex)
     {
         $scope.currentPage = currentIndex;
