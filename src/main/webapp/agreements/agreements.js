@@ -9,22 +9,25 @@ angular.module('agreementsModule').controller('agreementsController', ['$scope',
 
     $scope.agreements = [ ];
 
-    this.reload = function ()
+    this.create = function ()
     {
-    	AgreementsLoader.load().then(function (data)
-        {
-            $scope.agreements = data.summaries;
-        });
+        $state.go('agreementtemplates');
     };
 
-    this.reload();
+    this.reload = function ()
+    {
+        AgreementsLoader.load().then(function (summaries)
+        {
+            $scope.agreements = summaries;
+        });
+    };
 
     this.examine = function (agreement)
     {
         $state.go('agreement', { "detailsurl": agreement.detailsurl });
     };
 
-    this.examine = function (agreement)
+    this.terminate = function (agreement)
     {
         $state.go('agreementtemplates');
     };
@@ -68,6 +71,8 @@ angular.module('agreementsModule').controller('agreementsController', ['$scope',
     {
         return Math.ceil($scope.agreements.length / $scope.pageSize);
     };
+
+    this.reload();
 }]);
 
 angular.module('agreementsModule').filter('onpage', ['$scope', function ($scope)
@@ -85,10 +90,13 @@ angular.module('agreementsModule').factory('AgreementsLoader', ['$http', '$q', '
         {
             var deferred = $q.defer();
 
-            $http.get('/ws/agreements').
+            $http.get('ws/agreements').
                 success(function (data, status, headers, config)
                 {
-                    deferred.resolve(data);
+                    if (data.summaries)
+                        deferred.resolve(data.summaries);
+                    else
+                        deferred.resolve([ ]);
                 }).
                 error(function (data, status, headers, config)
                 {

@@ -88,24 +88,28 @@ public class AgreementTemplatesWS
             requestURL = requestURL + "/";
 
         AgreementTemplateSummaryDTO agreementTemplateSummary01 = new AgreementTemplateSummaryDTO();
+        agreementTemplateSummary01.setId("3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
         agreementTemplateSummary01.setName("XML Real-time internal agreement");
         agreementTemplateSummary01.setPurpose("Create an agreement with an internal party to supply real-time XML data.");
         agreementTemplateSummary01.setDetailsurl(requestURL + "3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
         agreementTemplateSummaries.add(agreementTemplateSummary01);
 
         AgreementTemplateSummaryDTO agreementTemplateSummary02 = new AgreementTemplateSummaryDTO();
+        agreementTemplateSummary02.setId("6e5747ef-41da-4344-a15e-e386695605f4");
         agreementTemplateSummary02.setName("JSON Real-time external agreement");
         agreementTemplateSummary02.setPurpose("Create an agreement with an external party to supply real-time JSON data.");
         agreementTemplateSummary02.setDetailsurl(requestURL + "6e5747ef-41da-4344-a15e-e386695605f4");
         agreementTemplateSummaries.add(agreementTemplateSummary02);
 
         AgreementTemplateSummaryDTO agreementTemplateSummary03 = new AgreementTemplateSummaryDTO();
+        agreementTemplateSummary03.setId("8693f1cd-8a77-4bca-87b0-46b3568657d4");
         agreementTemplateSummary03.setName("XML Real-time internal agreement");
         agreementTemplateSummary03.setPurpose("Create an agreement with an internal party to supply real-time XML data.");
         agreementTemplateSummary03.setDetailsurl(requestURL + "8693f1cd-8a77-4bca-87b0-46b3568657d4");
         agreementTemplateSummaries.add(agreementTemplateSummary03);
 
         AgreementTemplateSummaryDTO agreementTemplateSummary04 = new AgreementTemplateSummaryDTO();
+        agreementTemplateSummary04.setId("15bdb060-e2f3-4665-a231-fc325fb23e2b");
         agreementTemplateSummary04.setName("JSON Real-time external agreement");
         agreementTemplateSummary04.setPurpose("Create an agreement with an external party to supply real-time JSON data.");
         agreementTemplateSummary04.setDetailsurl(requestURL + "15bdb060-e2f3-4665-a231-fc325fb23e2b");

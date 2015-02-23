@@ -14,11 +14,22 @@ public class AgreementTemplateSummaryDTO implements Serializable
     {
     }
 
-    public AgreementTemplateSummaryDTO(String name, String purpose, String detailsurl)
+    public AgreementTemplateSummaryDTO(String id, String name, String purpose, String detailsurl)
     {
+        _id         = id;
         _name       = name;
         _purpose    = purpose;
         _detailsurl = detailsurl;
+    }
+
+    public String getId()
+    {
+        return _id;
+    }
+
+    public void setId(String id)
+    {
+        _id = id;
     }
 
     public String getName()
@@ -51,6 +62,7 @@ public class AgreementTemplateSummaryDTO implements Serializable
         _detailsurl = detailsurl;
     }
 
+    private String _id;
     private String _name;
     private String _purpose;
     private String _detailsurl;
