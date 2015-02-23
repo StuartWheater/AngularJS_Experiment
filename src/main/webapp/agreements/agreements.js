@@ -16,9 +16,9 @@ angular.module('agreementsModule').controller('agreementsController', ['$scope',
 
     this.reload = function ()
     {
-    	AgreementsLoader.load().then(function (data)
+        AgreementsLoader.load().then(function (summaries)
         {
-            $scope.agreements = data.summaries;
+            $scope.agreements = summaries;
         });
     };
 
@@ -90,10 +90,13 @@ angular.module('agreementsModule').factory('AgreementsLoader', ['$http', '$q', '
         {
             var deferred = $q.defer();
 
-            $http.get('/ws/agreements').
+            $http.get('ws/agreements').
                 success(function (data, status, headers, config)
                 {
-                    deferred.resolve(data);
+                    if (data.summaries)
+                        deferred.resolve(data.summaries);
+                    else
+                        deferred.resolve([ ]);
                 }).
                 error(function (data, status, headers, config)
                 {
