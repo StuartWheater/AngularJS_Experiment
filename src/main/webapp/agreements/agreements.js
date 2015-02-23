@@ -9,6 +9,11 @@ angular.module('agreementsModule').controller('agreementsController', ['$scope',
 
     $scope.agreements = [ ];
 
+    this.create = function ()
+    {
+        $state.go('agreementtemplates');
+    };
+
     this.reload = function ()
     {
     	AgreementsLoader.load().then(function (data)
@@ -17,14 +22,12 @@ angular.module('agreementsModule').controller('agreementsController', ['$scope',
         });
     };
 
-    this.reload();
-
     this.examine = function (agreement)
     {
         $state.go('agreement', { "detailsurl": agreement.detailsurl });
     };
 
-    this.examine = function (agreement)
+    this.terminate = function (agreement)
     {
         $state.go('agreementtemplates');
     };
@@ -68,6 +71,8 @@ angular.module('agreementsModule').controller('agreementsController', ['$scope',
     {
         return Math.ceil($scope.agreements.length / $scope.pageSize);
     };
+
+    this.reload();
 }]);
 
 angular.module('agreementsModule').filter('onpage', ['$scope', function ($scope)
