@@ -6,18 +6,16 @@ package com.arjuna.playground.store.agreementtemplates;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.Entity;
 
-@Entity
-public class AgreementTemplateFieldEntity implements Serializable
+public class AgreementTemplateField implements Serializable
 {
     private static final long serialVersionUID = 4874019303653238725L;
 
-    public AgreementTemplateFieldEntity()
+    public AgreementTemplateField()
     {
     }
 
-    public AgreementTemplateFieldEntity(String id, String name, String type, String label, String purpose, String defaultvalue, List<AgreementTemplateFieldValidationEntity> validations, List<AgreementTemplateFieldOptionValueEntity> optionvalues, Boolean required)
+    public AgreementTemplateField(String id, String name, String type, String label, String purpose, String defaultvalue, List<AgreementTemplateFieldValidation> validations, List<AgreementTemplateFieldOptionValue> optionvalues, Boolean required)
     {
         _id           = id;
         _name         = name;
@@ -90,22 +88,22 @@ public class AgreementTemplateFieldEntity implements Serializable
         _purpose = purpose;
     }
 
-    public List<AgreementTemplateFieldValidationEntity> getValidations()
+    public List<AgreementTemplateFieldValidation> getValidations()
     {
         return _validations;
     }
 
-    public void setValidations(List<AgreementTemplateFieldValidationEntity> validations)
+    public void setValidations(List<AgreementTemplateFieldValidation> validations)
     {
         _validations = validations;
     }
 
-    public List<AgreementTemplateFieldOptionValueEntity> getOptionvalues()
+    public List<AgreementTemplateFieldOptionValue> getOptionvalues()
     {
         return _optionvalues;
     }
 
-    public void setOptionvalues(List<AgreementTemplateFieldOptionValueEntity> optionvalues)
+    public void setOptionvalues(List<AgreementTemplateFieldOptionValue> optionvalues)
     {
         _optionvalues = optionvalues;
     }
@@ -120,13 +118,13 @@ public class AgreementTemplateFieldEntity implements Serializable
         _required = required;
     }
 
-    private String                                        _id;
-    private String                                        _name;
-    private String                                        _type;
-    private String                                        _label;
-    private String                                        _purpose;
-    private String                                        _defaultvalue;
-    private List<AgreementTemplateFieldValidationEntity>  _validations;
-    private List<AgreementTemplateFieldOptionValueEntity> _optionvalues;
-    private Boolean                                       _required;
+    private String                                  _id;
+    private String                                  _name;
+    private String                                  _type;
+    private String                                  _label;
+    private String                                  _purpose;
+    private String                                  _defaultvalue;
+    private List<AgreementTemplateFieldValidation>  _validations;
+    private List<AgreementTemplateFieldOptionValue> _optionvalues;
+    private Boolean                                 _required;
 }

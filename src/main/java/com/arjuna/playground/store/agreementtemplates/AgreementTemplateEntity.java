@@ -6,7 +6,10 @@ package com.arjuna.playground.store.agreementtemplates;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import org.hibernate.annotations.Type;
 
 @Entity
 public class AgreementTemplateEntity implements Serializable
@@ -17,7 +20,7 @@ public class AgreementTemplateEntity implements Serializable
     {
     }
 
-    public AgreementTemplateEntity(String id, String name, String purpose, List<AgreementTemplateFieldEntity> fieldsDetails)
+    public AgreementTemplateEntity(String id, String name, String purpose, List<AgreementTemplateField> fieldsDetails)
     {
         _id            = id;
         _name          = name;
@@ -55,18 +58,24 @@ public class AgreementTemplateEntity implements Serializable
         _purpose = purpose;
     }
 
-    public List<AgreementTemplateFieldEntity> getFieldsDetails()
+    public List<AgreementTemplateField> getFieldsDetails()
     {
         return _fieldsDetails;
     }
 
-    public void setFieldsDetails(List<AgreementTemplateFieldEntity> fieldsDetails)
+    public void setFieldsDetails(List<AgreementTemplateField> fieldsDetails)
     {
         _fieldsDetails = fieldsDetails;
     }
 
-    private String                             _id;
-    private String                             _name;
-    private String                             _purpose;
-    private List<AgreementTemplateFieldEntity> _fieldsDetails;
+    @Id
+    @Column(name = "id")
+    protected String                             _id;
+    @Column(name = "name")
+    protected String                             _name;
+    @Column(name = "purpose")
+    protected String                             _purpose;
+    @Type(type = "serializable")
+    @Column(name = "fieldsDetails")
+    protected List<AgreementTemplateField> _fieldsDetails;
 }

@@ -142,14 +142,14 @@ public class AgreementsWS
 
     private List<AgreementSummaryDTO> createAgreementSummaries()
     {
-        List<AgreementSummaryDTO> agreementSummaries = new LinkedList<>();
+        List<AgreementSummaryDTO> agreementSummaries = new LinkedList<AgreementSummaryDTO>();
 
         String requestURL = _request.getRequestURL().toString();
         if (! requestURL.endsWith("/"))
             requestURL = requestURL + "/";
 
         Date now = new Date();
-        
+
         AgreementSummaryDTO agreementSummary01 = new AgreementSummaryDTO();
         agreementSummary01.setId("3f7e5ba2-1e03-4641-b477-36d3ecb18de8");
         agreementSummary01.setName("XML Real-time internal agreement");
@@ -254,7 +254,7 @@ public class AgreementsWS
 
         return agreementDetailsMap;
     }
-    
+
     @Context
     private HttpServletRequest _request;
 }

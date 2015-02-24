@@ -5,18 +5,16 @@
 package com.arjuna.playground.store.agreementtemplates;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
 
-@Entity
-public class AgreementTemplateFieldOptionValueEntity implements Serializable
+public class AgreementTemplateFieldOptionValue implements Serializable
 {
     private static final long serialVersionUID = -8046555033747924884L;
 
-    public AgreementTemplateFieldOptionValueEntity()
+    public AgreementTemplateFieldOptionValue()
     {
     }
 
-    public AgreementTemplateFieldOptionValueEntity(String id, String label, String value)
+    public AgreementTemplateFieldOptionValue(String id, String label, String value)
     {
         _id    = id;
         _label = label;
@@ -43,12 +41,12 @@ public class AgreementTemplateFieldOptionValueEntity implements Serializable
         _label = label;
     }
 
-    public String getErrorMessage()
+    public String getValue()
     {
         return _value;
     }
 
-    public void setErrorMessage(String value)
+    public void setValue(String value)
     {
         _value = value;
     }

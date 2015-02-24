@@ -5,18 +5,16 @@
 package com.arjuna.playground.store.agreementtemplates;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
 
-@Entity
-public class AgreementTemplateFieldValidationEntity implements Serializable
+public class AgreementTemplateFieldValidation implements Serializable
 {
     private static final long serialVersionUID = 351053677909126758L;
 
-    public AgreementTemplateFieldValidationEntity()
+    public AgreementTemplateFieldValidation()
     {
     }
 
-    public AgreementTemplateFieldValidationEntity(String id, String regex, String errormessage)
+    public AgreementTemplateFieldValidation(String id, String regex, String errormessage)
     {
         _id           = id;
         _regex        = regex;
