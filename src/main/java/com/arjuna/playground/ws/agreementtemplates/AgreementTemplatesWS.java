@@ -10,9 +10,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.ejb.Stateless;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
+import javax.ws.rs.OPTIONS;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -20,6 +23,7 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.ResponseBuilder;
 
 @Path("/agreementtemplates")
 @Stateless
@@ -116,6 +120,23 @@ public class AgreementTemplatesWS
         agreementTemplateSummaries.add(agreementTemplateSummary04);
 
         return agreementTemplateSummaries;
+    }
+
+    @OPTIONS
+    @Path("/{path:.*}")
+    public Response handleCORSRequest(@HeaderParam("Access-Control-Request-Method") String requestMethod, @HeaderParam("Access-Control-Request-Headers") String requestHeaders)
+    {
+        ResponseBuilder retValue = Response.ok();
+
+        if (requestHeaders != null)
+            retValue.header("Access-Control-Allow-Headers", requestHeaders);
+
+        if (requestMethod != null)
+            retValue.header("Access-Control-Allow-Methods", requestMethod);
+
+        retValue.header("Access-Control-Allow-Origin", "*");
+
+        return retValue.build();
     }
 
     private Map<String, AgreementTemplateDetailsDTO> createAgreementTemplateDetailsMap()

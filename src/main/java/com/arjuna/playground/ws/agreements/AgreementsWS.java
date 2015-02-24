@@ -16,6 +16,8 @@ import javax.ejb.Stateless;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
+import javax.ws.rs.OPTIONS;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -25,6 +27,7 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.ResponseBuilder;
 
 @Path("/agreements")
 @Stateless
@@ -140,6 +143,23 @@ public class AgreementsWS
         }
     }
 
+    @OPTIONS
+    @Path("/{path:.*}")
+    public Response handleCORSRequest(@HeaderParam("Access-Control-Request-Method") String requestMethod, @HeaderParam("Access-Control-Request-Headers") String requestHeaders)
+    {
+        ResponseBuilder retValue = Response.ok();
+
+        if (requestHeaders != null)
+            retValue.header("Access-Control-Allow-Headers", requestHeaders);
+
+        if (requestMethod != null)
+            retValue.header("Access-Control-Allow-Methods", requestMethod);
+
+        retValue.header("Access-Control-Allow-Origin", "*");
+
+        return retValue.build();
+    }
+
     private List<AgreementSummaryDTO> createAgreementSummaries()
     {
         List<AgreementSummaryDTO> agreementSummaries = new LinkedList<AgreementSummaryDTO>();
@@ -253,8 +273,8 @@ public class AgreementsWS
         agreementDetailsMap.put("15bdb060-e2f3-4665-a231-fc325fb23e2b", agreementDetails04);
 
         return agreementDetailsMap;
-    }
-
+    }    
+    
     @Context
     private HttpServletRequest _request;
 }
